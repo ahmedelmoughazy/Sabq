@@ -1,0 +1,40 @@
+PODS:
+  - Alamofire (4.9.0)
+  - LocalizedTimeAgo (1.3.0)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Result (4.1.0)
+  - SDWebImage (5.2.3):
+    - SDWebImage/Core (= 5.2.3)
+  - SDWebImage/Core (5.2.3)
+  - SwiftyImage (1.5.1)
+
+DEPENDENCIES:
+  - LocalizedTimeAgo
+  - Moya
+  - SDWebImage
+  - SwiftyImage
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - LocalizedTimeAgo
+    - Moya
+    - Result
+    - SDWebImage
+    - SwiftyImage
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  LocalizedTimeAgo: d157908f7e83a8cdd015a669a57d17829d83f112
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
+  SwiftyImage: 88a8c90ee3963a498de728c4ccdb079b4820cef0
+
+PODFILE CHECKSUM: ad0dfc9caa97f0d181fe7b35379a28dc425dcafe
+
+COCOAPODS: 1.8.3
