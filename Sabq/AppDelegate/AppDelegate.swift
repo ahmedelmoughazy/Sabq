@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        setupNetworking()
+        NetworkManager.shared.getSliders { (result, statusCode) in
+            do {
+                let results = try result.get().slider
+                print(results[0].title)
+            } catch {
+                print(error)
+            }
+        }
         return true
     }
 }

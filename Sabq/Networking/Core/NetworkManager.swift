@@ -2,9 +2,10 @@
 //  NetworkManager.swift
 //  Sample MVP
 //
-//  Created by Bassem Abbas on 9/18/19.
+//  Created by AhmedElmoughazy on 10/17/19.
 //  Copyright © 2019 Ibtikar Technologies, Co. Ltd. All rights reserved.
 //
+
 
 import Foundation
 import Moya
@@ -26,10 +27,9 @@ class NetworkManager {
         self.networkConfig = config
         
         let headerPlugin = StaticHeaderPlugin(
-			headers: ["X-Api-Key:" : networkConfig.apiKey])
+			headers: ["X-Api-Key" : networkConfig.apiKey])
         
-        provider = MoyaProvider<MultiTarget>(//manager: ,
-        plugins: [headerPlugin, NetworkLoggerPlugin(verbose: true)])
+        provider = MoyaProvider<MultiTarget>(plugins: [headerPlugin, NetworkLoggerPlugin(verbose: true)])
     }
     
 }

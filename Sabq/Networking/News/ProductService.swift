@@ -1,19 +1,18 @@
 //
 //  ProductService.swift
-//  Sample MVP
 //
-//  Created by Bassem Abbas on 9/18/19.
+//  Created by AhmedElmoughazy on 10/17/19.
 //  Copyright © 2019 Ibtikar Technologies, Co. Ltd. All rights reserved.
 //
 
 import Foundation
 import Moya
 
-//swiftlint:disable  force_unwrapping
-
 enum  NewsService {
-    case popular(page:Int)
-    case search(page:Int, query:String)
+    case slider
+    case images
+    case videos
+    case articles
 }
 
 extension NewsService: TargetType {
@@ -23,47 +22,70 @@ extension NewsService: TargetType {
     
     var path: String {
         switch self {
-        case .popular:
-            return "/person/popular"
-        case .search:
-            return "/search/person"
-            
+        case .slider:
+            return "/material/homepage-light-version"
+        case .images:
+            return "/studio/list-studio"
+        case .videos:
+            return "/studio/list-studio"
+        case .articles:
+            return "/material/articles"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .popular:
+        case .slider:
             return .get
-        case .search:
+            
+        case .images:
+            return .get
+            
+        case .videos:
+            return .get
+            
+        case .articles:
             return .get
         }
     }
     
     var sampleData: Data {
         switch self {
-        case .popular:
+        case .slider:
             return Data()
-        case .search:
+        case .images:
+            return Data()
+        case .videos:
+            return Data()
+        case .articles:
             return Data()
         }
     }
     
     var task: Task {        
         switch self {
-        case .popular(let page) :
-            var params: [String: Any] = [:]
-            params["api_key"] = NetworkManager.shared.networkConfig.apiKey
-            params["page"] = page
+        case .slider:
+            let params: [String: Any] = [:]
             return .requestParameters(
                 parameters: params,
                 encoding: URLEncoding.default)
             
-        case .search(let page, let query) :
+        case .images:
             var params: [String: Any] = [:]
-            params["api_key"] = NetworkManager.shared.networkConfig.apiKey
-            params["query"] = query
-            params["page"] = page
+            params["type"] = "image"
+            return .requestParameters(
+                parameters: params,
+                encoding: URLEncoding.default)
+            
+        case .videos:
+            var params: [String: Any] = [:]
+            params["type"] = "video"
+            return .requestParameters(
+                parameters: params,
+                encoding: URLEncoding.default)
+            
+        case .articles:
+            let params: [String: Any] = [:]
             return .requestParameters(
                 parameters: params,
                 encoding: URLEncoding.default)
@@ -74,6 +96,3 @@ extension NewsService: TargetType {
         return nil
     }
 }
-
-
-/*baseUrl = "https://api.themoviedb.org/3/search/person?api_key=3955a9144c79cb1fca10185c95080107&query=\(query.replacingOccurrences(of: " ", with: "%20"))&page="*/
