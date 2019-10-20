@@ -21,6 +21,8 @@ extension NetworkManager {
                 if (200...299 ~= response.statusCode) {
                     do {
                         let result = try JSONDecoder().decode(SliderResponse.self, from: response.data)
+                        result.materials
+                        result.slider
                         completion(.success(result), response.statusCode)
                     } catch {
                         completion(.failure(NetworkError.parseError), response.statusCode)

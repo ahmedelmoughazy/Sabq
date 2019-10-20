@@ -13,7 +13,7 @@ class HomeModel: HomeModelProtocol {
     func getSliders(compelation: @escaping (Result<Any, Error>) -> Void) {
         NetworkManager.shared.getSliders { (result, statusCode) in
             do {
-                let results = try result.get().materials
+                let results = try result.get()
                 compelation(.success(results))
             } catch {
                 print(error)

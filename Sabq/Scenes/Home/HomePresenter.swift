@@ -17,8 +17,9 @@ class HomePresenter: HomePresenterProtocol{
     func loadHome() {
         homeModel.getSliders {(result) in
             do {
-                let results = try result.get() as! [Material]
-                self.homeView.renderViewWithObjects(list: results)
+                let sliders = try (result.get() as! SliderResponse).slider
+                let materials = try (result.get() as! SliderResponse).materials
+                self.homeView.renderViewWithObjects(sliders: sliders, materials: materials)
             } catch {
                 print(error)
             }

@@ -40,9 +40,14 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal{
 
     }
     
-    func addSlidersAndMaterials(materials: [Material]) {
+    func addSlidersAndMaterials(sliders: [Material],materials: [Material]) {
         if list == nil {
             list = []
+        }
+        
+        if !sliders.isEmpty {
+            let slidersItem = SliderListItem(sliders: sliders)
+            list?.append(slidersItem)
         }
         
         if !materials.isEmpty {
@@ -114,18 +119,18 @@ extension HomeAdapter: UITableViewDataSource {
         
         switch item.type {
         case .slider:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: MaterialTableViewCell.identifier, for: indexPath) as? MaterialTableViewCell {
+            if let item = item as? SliderListItem, let cell = tableView.dequeueReusableCell(withIdentifier: SliderTableViewCell.identifier, for: indexPath) as? SliderTableViewCell {
                 //configure the cell
                 return cell
             }
         case .material:
-            if let item = item as? MaterialItem,  let cell = tableView.dequeueReusableCell(withIdentifier: MaterialTableViewCell.identifier, for: indexPath) as? MaterialTableViewCell {
+            if let item = item as? MaterialItem, let cell = tableView.dequeueReusableCell(withIdentifier: MaterialTableViewCell.identifier, for: indexPath) as? MaterialTableViewCell {
                 cell.title.text = item.material[indexPath.row].title
                 //configure the cell
                 return cell
             }
         case .images:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: MaterialTableViewCell.identifier, for: indexPath) as? MaterialTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.identifier, for: indexPath) as? ImageTableViewCell {
                 //configure the cell
                 return cell
             }
@@ -192,9 +197,25 @@ class MaterialItem: HomeListItem {
 //    }
 //}
 //
-//class ImagesListItem: HomeListItem {
+class ImagesListItem: HomeListItem {
+    var type: HomeItemType {
+        return .images
+    }
+
+    var rowCount: Int {
+        return 1
+    }
+
+    var imageComics: [ImageComic]
+
+    init(imageComics: [ImageComic]) {
+        self.imageComics = imageComics
+    }
+}
+
+//class ArticlesListItem: HomeListItem {
 //    var type: HomeItemType {
-//        return .images
+//        return .articles
 //    }
 //
 //    var rowCount: Int {

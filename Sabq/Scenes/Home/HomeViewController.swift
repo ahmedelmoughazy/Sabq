@@ -35,8 +35,8 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         homeTableView.reloadData()
     }
     
-    func renderViewWithObjects(list: [Material]) {
-        adapter.addSlidersAndMaterials(materials: list)
+    func renderViewWithObjects(sliders: [Material], materials: [Material]) {
+        adapter.addSlidersAndMaterials(sliders: sliders, materials: materials)
         print("data is in view")
     }
 }
