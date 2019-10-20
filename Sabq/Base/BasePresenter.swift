@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class BasePresenter:NSObject, BasePresenterProtocol {
+    
+    required init(view: BaseViewProtocol, model: BaseModelProtocol) {
+        
+    }
+}

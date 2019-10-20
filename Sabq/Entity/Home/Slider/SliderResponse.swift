@@ -1,7 +1,7 @@
 import Foundation
 
 struct SliderResponse: Codable {
-	var slider : [Slider]
-	var materials : [SliderMaterial]
+	var slider : [Material]
+	var materials : [Material]
 	var code : Int
 }

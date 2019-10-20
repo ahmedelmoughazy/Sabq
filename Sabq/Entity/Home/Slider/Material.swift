@@ -1,6 +1,6 @@
 import Foundation
 
-struct SliderMaterial : Codable {
+struct Material : Codable {
 	var id : String
 	var title : String
 	var description : String
