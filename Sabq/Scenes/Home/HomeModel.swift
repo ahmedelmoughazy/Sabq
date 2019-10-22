@@ -24,7 +24,7 @@ class HomeModel: HomeModelProtocol {
     func getImages(compelation: @escaping (Result<Any, Error>) -> Void) {
         NetworkManager.shared.getImages { (result, statusCode) in
             do {
-                let results = try result.get().materials
+                let results = try result.get()
                 compelation(.success(results))
             } catch {
                 print(error)
@@ -35,7 +35,7 @@ class HomeModel: HomeModelProtocol {
     func getVideos(compelation: @escaping (Result<Any, Error>) -> Void) {
         NetworkManager.shared.getVideos { (result, statusCode) in
             do {
-                let results = try result.get().materials
+                let results = try result.get()
                 compelation(.success(results))
             } catch {
                 print(error)
@@ -46,7 +46,7 @@ class HomeModel: HomeModelProtocol {
     func getArticles(compelation: @escaping (Result<Any, Error>) -> Void) {
         NetworkManager.shared.getArticles { (result, statusCode) in
             do {
-                let results = try result.get().materials
+                let results = try result.get()
                 compelation(.success(results))
             } catch {
                 print(error)

@@ -11,7 +11,6 @@ import UIKit
 
 
 enum HomeItemType {
-    case slider
     case material
     case images
     case videos
@@ -20,14 +19,15 @@ enum HomeItemType {
 
 protocol HomeListItem {
     var type: HomeItemType { get }
-    var rowCount: Int { get }
 }
 
 class HomeAdapter: NSObject, BaseListAdapterProtocal{
     
     typealias DataType = HomeListItem
-
+    
     internal var list: [HomeListItem]?
+    
+    var slider = [SliderListItem]()
     
     var tableView: UITableView?
     
@@ -37,7 +37,7 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal{
     var showEmptyState: ((Bool) -> Void)?
     
     func setTableView(newsTable: UITableView){
-
+        self.tableView = newsTable
     }
     
     func addSlidersAndMaterials(sliders: [Material],materials: [Material]) {
@@ -47,26 +47,40 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal{
         
         if !sliders.isEmpty {
             let slidersItem = SliderListItem(sliders: sliders)
-            list?.append(slidersItem)
+            slider.append(slidersItem)
         }
         
         if !materials.isEmpty {
-            let materialsItem = MaterialItem(material: materials)
-            list?.append(materialsItem)
+            for material in materials {
+                let materialsItem = MaterialItem(material: material)
+                list?.append(materialsItem)
+            }
         }
         reloadData?()
     }
     
-    func addVideos(item: [HomeListItem]) {
-        
+    func addVideos(items: [Material]) {
+        if !items.isEmpty {
+            let materialsItem = VideosListItem(videos: items)
+            list?.insert(materialsItem, at: 5)
+        }
+        reloadData?()
     }
     
-    func addImages(item: HomeListItem) {
-        
+    func addImages(items: [Material]) {
+        if !items.isEmpty {
+            let materialsItem = ImagesListItem(images: items)
+            list?.insert(materialsItem, at: 11)
+        }
+        reloadData?()
     }
     
-    func addArticles(item: HomeListItem) {
-        
+    func addArticles(items: [Material]) {
+        if !items.isEmpty {
+            let materialsItem = ArticlesListItem(articles: items)
+            list?.insert(materialsItem, at: 17)
+        }
+        reloadData?()
     }
     
     func add(item: HomeListItem) {
@@ -90,7 +104,7 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal{
     }
     
     func isLastIndex(index: IndexPath) -> Bool {
-        return index.row == count()-3
+        return index.row == count()-1
     }
     
     func clear(reload: Bool) {
@@ -107,53 +121,64 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal{
 extension HomeAdapter: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return count()
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list![section].rowCount
+        switch section {
+        case 0:
+            return slider.count
+        default:
+            return count()
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = list![indexPath.section]
         
-        switch item.type {
-        case .slider:
-            if let item = item as? SliderListItem, let cell = tableView.dequeueReusableCell(withIdentifier: SliderTableViewCell.identifier, for: indexPath) as? SliderTableViewCell {
+        let section = indexPath.section
+        let item = list![indexPath.row]
+        
+        switch section {
+        case 0:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: SliderTableViewCell.identifier, for: indexPath) as? SliderTableViewCell {
                 //configure the cell
+                cell.sliders = slider[indexPath.row].sliders
                 return cell
             }
-        case .material:
-            if let item = item as? MaterialItem, let cell = tableView.dequeueReusableCell(withIdentifier: MaterialTableViewCell.identifier, for: indexPath) as? MaterialTableViewCell {
-                cell.title.text = item.material[indexPath.row].title
-                //configure the cell
-                return cell
-            }
-        case .images:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.identifier, for: indexPath) as? ImageTableViewCell {
-                //configure the cell
-                return cell
-            }
-        case .videos:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: MaterialTableViewCell.identifier, for: indexPath) as? MaterialTableViewCell {
-                //configure the cell
-                return cell
-            }
-        case .articles:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: MaterialTableViewCell.identifier, for: indexPath) as? MaterialTableViewCell {
-                //configure the cell
-                return cell
+        default:
+            switch item.type {
+            case .material:
+                if let item = item as? MaterialItem, let cell = tableView.dequeueReusableCell(withIdentifier: MaterialTableViewCell.identifier, for: indexPath) as? MaterialTableViewCell {
+                    //configure the cell
+                    cell.configureCell(material: item.material)
+                    return cell
+                }
+            case .images:
+                if let item = item as? ImagesListItem, let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.identifier, for: indexPath) as? ImageTableViewCell {
+                    //configure the cell
+                    cell.images = item.images
+                    return cell
+                }
+            case .videos:
+                if let item = item as? VideosListItem, let cell = tableView.dequeueReusableCell(withIdentifier: VideoTableViewCell.identifier, for: indexPath) as? VideoTableViewCell {
+                    //configure the cell
+                    return cell
+                }
+            case .articles:
+                if let item = item as? ArticlesListItem, let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.identifier, for: indexPath) as? ArticleTableViewCell {
+                    //configure the cell
+                    return cell
+                }
             }
         }
+        
+        
         return UITableViewCell()
     }
 }
 
-class SliderListItem: HomeListItem {
-    var type: HomeItemType {
-        return .slider
-    }
-
+class SliderListItem{
+    
     var rowCount: Int {
         return 1
     }
@@ -169,62 +194,50 @@ class MaterialItem: HomeListItem {
     var type: HomeItemType {
         return .material
     }
-
-    var rowCount: Int {
-        return material.count
-    }
     
-    var material: [Material]
+    var material: Material
     
-    init(material: [Material]) {
+    init(material: Material) {
         self.material = material
     }
 }
 
-//class VideosListItem: HomeListItem {
-//    var type: HomeItemType {
-//        return .videos
-//    }
-//
-//    var rowCount: Int {
-//        return 1
-//    }
-//
-//    var email: String
-//
-//    init(email: String) {
-//        self.email = email
-//    }
-//}
-//
+class VideosListItem: HomeListItem {
+    var type: HomeItemType {
+        return .videos
+    }
+    
+    var videos: [Material]
+    
+    init(videos: [Material]) {
+        self.videos = videos
+    }
+}
+
 class ImagesListItem: HomeListItem {
     var type: HomeItemType {
         return .images
     }
-
+    
     var rowCount: Int {
         return 1
     }
-
-    var imageComics: [ImageComic]
-
-    init(imageComics: [ImageComic]) {
-        self.imageComics = imageComics
+    
+    var images: [Material]
+    
+    init(images: [Material]) {
+        self.images = images
     }
 }
 
-//class ArticlesListItem: HomeListItem {
-//    var type: HomeItemType {
-//        return .articles
-//    }
-//
-//    var rowCount: Int {
-//        return attributes.count
-//    }
-//
-//    var attributes: [Attribute]
-//
-//    init(attributes: [Attribute]) {
-//        self.attributes = attributes
-//    }
-//}
+class ArticlesListItem: HomeListItem {
+    var type: HomeItemType {
+        return .articles
+    }
+    
+    var articles: [Material]
+    
+    init(articles: [Material]) {
+        self.articles = articles
+    }
+}

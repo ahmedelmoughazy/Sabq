@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import SDWebImage
+import LocalizedTimeAgo
 
 class MaterialTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var newsImageView: UIImageView!
+    @IBOutlet weak private var timeLabel: UILabel!
+    @IBOutlet weak private var viewsLabel: UILabel!
+    @IBOutlet weak private var viewsImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +29,14 @@ class MaterialTableViewCell: UITableViewCell {
     
     static var identifier: String {
         return String(describing: self)
+    }
+    
+    func configureCell(material: Material){
+        self.titleLabel.text = material.title
+        self.newsImageView.sd_setImage(with:
+            URL(string: material.coverPhoto!), placeholderImage: UIImage(named: "img_news_img_1"))
+        self.timeLabel.text = (material.publishDate?.convertToDate())?.shortTimeAgo()
+        self.viewsImageView.image = material.noOfViews! > 5000 ? UIImage(named: "ic_views_icon_hot"): UIImage(named: "ic_views_icon")
+        self.viewsLabel.text = String(describing: material.noOfViews!)
     }
 }

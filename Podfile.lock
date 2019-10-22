@@ -10,12 +10,14 @@ PODS:
   - SDWebImage (5.2.3):
     - SDWebImage/Core (= 5.2.3)
   - SDWebImage/Core (5.2.3)
+  - SkeletonView (1.8.2)
   - SwiftyImage (1.5.1)
 
 DEPENDENCIES:
   - LocalizedTimeAgo
   - Moya
   - SDWebImage
+  - SkeletonView
   - SwiftyImage
 
 SPEC REPOS:
@@ -25,6 +27,7 @@ SPEC REPOS:
     - Moya
     - Result
     - SDWebImage
+    - SkeletonView
     - SwiftyImage
 
 SPEC CHECKSUMS:
@@ -33,8 +36,9 @@ SPEC CHECKSUMS:
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
+  SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
   SwiftyImage: 88a8c90ee3963a498de728c4ccdb079b4820cef0
 
-PODFILE CHECKSUM: ad0dfc9caa97f0d181fe7b35379a28dc425dcafe
+PODFILE CHECKSUM: a1692ab86e29eadd24946df07e4b4f3dbabed542
 
 COCOAPODS: 1.8.3

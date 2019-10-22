@@ -24,4 +24,8 @@ class NewsRouter {
         window?.makeKeyAndVisible()
     }
 
+    class func setRTL() {
+        UIView.appearance().semanticContentAttribute = .forceRightToLeft
+        UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
+    }
 }

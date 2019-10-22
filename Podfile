@@ -9,5 +9,6 @@ target 'Sabq' do
   	pod 'SDWebImage'
 	pod 'LocalizedTimeAgo'
 	pod 'SwiftyImage'
+        pod 'SkeletonView'
   # Pods for Sabq
 end

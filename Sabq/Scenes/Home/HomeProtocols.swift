@@ -14,6 +14,9 @@ protocol HomePresenterProtocol: BasePresenterProtocol {
 
 protocol HomeViewProtocol:BaseViewProtocol {
     func renderViewWithObjects(sliders: [Material], materials: [Material])
+    func renderViewWithObjects(images: [Material])
+    func renderViewWithObjects(videos: [Material])
+    func renderViewWithObjects(articles: [Material])
 }
 
 protocol HomeModelProtocol:BaseModelProtocol {

@@ -20,6 +20,7 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         homeTableView.delegate = self
         homeTableView.separatorStyle = .none
         
+        homeTableView.register(ArticleTableViewCell.nib, forCellReuseIdentifier: ArticleTableViewCell.identifier)
         homeTableView.register(VideoTableViewCell.nib, forCellReuseIdentifier: VideoTableViewCell.identifier)
         homeTableView.register(ImageTableViewCell.nib, forCellReuseIdentifier: ImageTableViewCell.identifier)
         homeTableView.register(MaterialTableViewCell.nib, forCellReuseIdentifier: MaterialTableViewCell.identifier)
@@ -37,29 +38,36 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
     
     func renderViewWithObjects(sliders: [Material], materials: [Material]) {
         adapter.addSlidersAndMaterials(sliders: sliders, materials: materials)
-        print("data is in view")
+        presenter.loadVideos()
+    }
+    
+    func renderViewWithObjects(images: [Material]) {
+        adapter.addImages(items: images)
+        presenter.loadArticles()
+    }
+    
+    func renderViewWithObjects(videos: [Material]) {
+        adapter.addVideos(items: videos)
+        presenter.loadImages()
+    }
+    
+    func renderViewWithObjects(articles: [Material]) {
+        adapter.addArticles(items: articles)
     }
 }
 
 extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140.0
+        switch indexPath.section {
+        case 0:
+            return UIScreen.main.bounds.height/2
+        default:
+            return 130
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("clicked on \(indexPath.row)")
         //  PeopleRouter.showDetail(at: self.navigationController!, with: (peoplePresenter?.getPerson(index:indexPath.row))!)
     }
-}
-
-extension HomeViewController: UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
-    
 }

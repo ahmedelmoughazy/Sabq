@@ -2,6 +2,6 @@ import Foundation
 
 struct ImageResponse : Codable {
 	var materials : [String]
-	var comics : [ImageComic]
+	var comics : [Material]
 	var code : Int
 }

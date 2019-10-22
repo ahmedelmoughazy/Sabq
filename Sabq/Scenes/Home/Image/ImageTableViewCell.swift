@@ -9,10 +9,16 @@
 import UIKit
 
 class ImageTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var imagesCollectionView: UICollectionView!
+    var images: [Material]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imagesCollectionView.delegate = self
+        imagesCollectionView.dataSource = self
+        imagesCollectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
     }
     
     static var nib:UINib {
@@ -22,4 +28,30 @@ class ImageTableViewCell: UITableViewCell {
     static var identifier: String {
         return String(describing: self)
     }
+    
+}
+
+extension ImageTableViewCell: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width , height: collectionView.frame.height)
+    }
+}
+
+extension ImageTableViewCell: UICollectionViewDelegate {
+    
+}
+
+extension ImageTableViewCell: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images!.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SliderCollectionViewCell.identifier, for: indexPath) as? SliderCollectionViewCell else { return UICollectionViewCell() }
+        cell.configureCell(material: images![indexPath.row])
+        return cell
+    }
+    
 }
