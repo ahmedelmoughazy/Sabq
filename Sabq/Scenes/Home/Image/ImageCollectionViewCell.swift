@@ -23,4 +23,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
         return String(describing: self)
     }
 
+    func configureCell(comic: Material){
+    }
 }

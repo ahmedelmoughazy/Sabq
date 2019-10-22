@@ -62,7 +62,12 @@ extension HomeViewController: UITableViewDelegate{
         case 0:
             return UIScreen.main.bounds.height/2
         default:
-            return 130
+            switch indexPath.row {
+            case 5,11,17:
+                return UIScreen.main.bounds.height/2.5
+            default:
+                return 130
+            }
         }
     }
     

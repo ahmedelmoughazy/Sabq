@@ -26,14 +26,11 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal{
     typealias DataType = HomeListItem
     
     internal var list: [HomeListItem]?
-    
     var slider = [SliderListItem]()
     
     var tableView: UITableView?
-    
     var reloadData: (() -> Void)?
     var loadMoreData:(() -> Void)?
-    
     var showEmptyState: ((Bool) -> Void)?
     
     func setTableView(newsTable: UITableView){
@@ -162,11 +159,13 @@ extension HomeAdapter: UITableViewDataSource {
             case .videos:
                 if let item = item as? VideosListItem, let cell = tableView.dequeueReusableCell(withIdentifier: VideoTableViewCell.identifier, for: indexPath) as? VideoTableViewCell {
                     //configure the cell
+                    cell.videos = item.videos
                     return cell
                 }
             case .articles:
                 if let item = item as? ArticlesListItem, let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.identifier, for: indexPath) as? ArticleTableViewCell {
                     //configure the cell
+                    cell.articles = item.articles
                     return cell
                 }
             }

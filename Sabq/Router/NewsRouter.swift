@@ -16,6 +16,7 @@ class NewsRouter {
     
     class func present(at window: UIWindow?) {
         let homeViewController = HomeModule.getHomeView()
+        homeViewController.navigationItem.titleView = UIImageView(image: UIImage(named: "img_logo"))
         self.navigationController = UINavigationController(rootViewController: homeViewController)
         self.tabbarController = UITabBarController()
         self.tabbarController?.viewControllers = [self.navigationController!]
