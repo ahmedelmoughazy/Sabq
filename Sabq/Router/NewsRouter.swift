@@ -11,24 +11,36 @@ import UIKit
 class NewsRouter {
     
     private static var window : UIWindow?
-    private static var navigationController : UINavigationController?
+    private static var homeNavigationController : UINavigationController?
     private static var tabbarController : UITabBarController?
     
-    class func present(at window: UIWindow?) {
+    class func startRouting(at window: UIWindow?) {
+        
+        //setup tabbar icons
+        let bookmarksItem = UITabBarItem(title: "Bookmarks", image: UIImage(named: "ic_newspaper_active"), selectedImage: UIImage(named: "ic_newspaper_active"))
+        let sectionsItem = UITabBarItem(title: "Sections", image: UIImage(named: "ic_newspaper_active"), selectedImage: UIImage(named: "ic_newspaper_active"))
+        let commonItem = UITabBarItem(title: "Common", image: UIImage(named: "ic_newspaper_active"), selectedImage: UIImage(named: "ic_newspaper_active"))
+        let searchItem = UITabBarItem(title: "Search", image: UIImage(named: "ic_newspaper_active"), selectedImage: UIImage(named: "ic_newspaper_active"))
+        let homeItem = UITabBarItem(title: "Home", image: UIImage(named: "ic_newspaper_active"), selectedImage: UIImage(named: "ic_newspaper_active"))
+        
+        //setup viewcontrollers
+        let bookmarksViewController = BookmarksModule.getBookmarksView()
+        let sectionsViewController = SectionsModule.getSectionsView()
+        let commonViewController = CommonModule.getCommonView()
+        let searchViewController = SearchModule.getSearchView()
         let homeViewController = HomeModule.getHomeView()
         
-        var notification = UIImage(named: "ic_notification_icon")
-        var user = UIImage(named: "img_user")
-        notification = notification?.withRenderingMode(.alwaysOriginal)
-        user = user?.withRenderingMode(.alwaysOriginal)
+        bookmarksViewController.tabBarItem = bookmarksItem
+        sectionsViewController.tabBarItem = sectionsItem
+        commonViewController.tabBarItem = commonItem
+        searchViewController.tabBarItem = searchItem
+        homeViewController.tabBarItem = homeItem
         
-        homeViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: notification, style:.plain, target: nil, action: nil)
-        homeViewController.navigationItem.rightBarButtonItem = UIBarButtonItem(image: user, style:.plain, target: nil, action: nil)
+        self.homeNavigationController = UINavigationController(rootViewController: homeViewController)
         
-        homeViewController.navigationItem.titleView = UIImageView(image: UIImage(named: "img_logo"))
-        self.navigationController = UINavigationController(rootViewController: homeViewController)
+        //setup tabbar
         self.tabbarController = UITabBarController()
-        self.tabbarController?.viewControllers = [self.navigationController!]
+        self.tabbarController?.viewControllers = [ homeNavigationController!, commonViewController, sectionsViewController, searchViewController, bookmarksViewController]
 
         window?.rootViewController = tabbarController
         window?.makeKeyAndVisible()

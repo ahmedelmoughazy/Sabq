@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
    //     UIView.appearance().semanticContentAttribute = .forceRightToLeft
         
-        NewsRouter.present(at: window)
+        NewsRouter.startRouting(at: window)
         return true
     }
 }
