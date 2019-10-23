@@ -16,6 +16,15 @@ class NewsRouter {
     
     class func present(at window: UIWindow?) {
         let homeViewController = HomeModule.getHomeView()
+        
+        var notification = UIImage(named: "ic_notification_icon")
+        var user = UIImage(named: "img_user")
+        notification = notification?.withRenderingMode(.alwaysOriginal)
+        user = user?.withRenderingMode(.alwaysOriginal)
+        
+        homeViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: notification, style:.plain, target: nil, action: nil)
+        homeViewController.navigationItem.rightBarButtonItem = UIBarButtonItem(image: user, style:.plain, target: nil, action: nil)
+        
         homeViewController.navigationItem.titleView = UIImageView(image: UIImage(named: "img_logo"))
         self.navigationController = UINavigationController(rootViewController: homeViewController)
         self.tabbarController = UITabBarController()

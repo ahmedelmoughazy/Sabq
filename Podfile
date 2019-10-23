@@ -6,9 +6,10 @@ target 'Sabq' do
   use_frameworks!
 
 	pod 'Moya'
-  	pod 'SDWebImage'
+  pod 'SDWebImage'
 	pod 'LocalizedTimeAgo'
 	pod 'SwiftyImage'
-        pod 'SkeletonView'
+  pod 'SkeletonView'
+  pod 'CircleImageView'
   # Pods for Sabq
 end

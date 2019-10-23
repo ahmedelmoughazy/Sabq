@@ -32,6 +32,6 @@ class VideoCollectionViewCell: UICollectionViewCell {
         self.newsImageView.sd_setImage(with:
             URL(string: comic.coverPhoto!), placeholderImage: UIImage(named: "img_news_img_1"))
         self.titleLabel.text = comic.title
-        self.timeLabel.text = comic.publishDate
+        self.timeLabel.text = (comic.publishDate?.convertToDate())?.shortTimeAgo()
     }
 }

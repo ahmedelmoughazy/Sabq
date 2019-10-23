@@ -10,17 +10,15 @@ import UIKit
 
 class ArticleTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var articlesCollectionView: UICollectionView!
     var articles: [Material]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        articlesCollectionView.delegate = self
+        articlesCollectionView.dataSource = self
+        articlesCollectionView.register(ArticleCollectionViewCell.nib, forCellWithReuseIdentifier: ArticleCollectionViewCell.identifier)
     }
     
     static var nib:UINib {
@@ -30,4 +28,29 @@ class ArticleTableViewCell: UITableViewCell {
     static var identifier: String {
         return String(describing: self)
     }
+    
+}
+
+extension ArticleTableViewCell: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.height , height: collectionView.frame.height)
+    }
+}
+
+extension ArticleTableViewCell: UICollectionViewDelegate {
+    
+}
+
+extension ArticleTableViewCell: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return articles!.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArticleCollectionViewCell.identifier, for: indexPath) as? ArticleCollectionViewCell else { return UICollectionViewCell() }
+        cell.configureCell(material: articles![indexPath.row])
+        return cell
+    }
+    
 }

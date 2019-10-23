@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C621156C06D82AE3C90FC01 /* Pods_Sabq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C59002BF082B3CFD946615F /* Pods_Sabq.framework */; };
+		3446928123605E7A0095CAC9 /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3446927F23605E7A0095CAC9 /* ArticleCollectionViewCell.swift */; };
+		3446928223605E7A0095CAC9 /* ArticleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3446928023605E7A0095CAC9 /* ArticleCollectionViewCell.xib */; };
 		344F582C235DA19A00206AC1 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344F5826235DA19A00206AC1 /* Material.swift */; };
 		344F582E235DA19A00206AC1 /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344F5828235DA19A00206AC1 /* Videos.swift */; };
 		344F582F235DA19A00206AC1 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344F5829235DA19A00206AC1 /* Tag.swift */; };
@@ -63,6 +65,8 @@
 
 /* Begin PBXFileReference section */
 		1C59002BF082B3CFD946615F /* Pods_Sabq.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sabq.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3446927F23605E7A0095CAC9 /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
+		3446928023605E7A0095CAC9 /* ArticleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCollectionViewCell.xib; sourceTree = "<group>"; };
 		344F5826235DA19A00206AC1 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
 		344F5828235DA19A00206AC1 /* Videos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
 		344F5829235DA19A00206AC1 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			children = (
 				344F5833235DDB0700206AC1 /* ArticleTableViewCell.swift */,
 				344F5834235DDB0700206AC1 /* ArticleTableViewCell.xib */,
+				3446927F23605E7A0095CAC9 /* ArticleCollectionViewCell.swift */,
+				3446928023605E7A0095CAC9 /* ArticleCollectionViewCell.xib */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -471,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				344F5836235DDB0700206AC1 /* ArticleTableViewCell.xib in Resources */,
+				3446928223605E7A0095CAC9 /* ArticleCollectionViewCell.xib in Resources */,
 				34F08494235C807000224187 /* ImageTableViewCell.xib in Resources */,
 				3460E950235F6784003803DC /* ImageCollectionViewCell.xib in Resources */,
 				34F08498235C807E00224187 /* VideoTableViewCell.xib in Resources */,
@@ -561,6 +568,7 @@
 				6B34ABC62359E4E500C81E40 /* BasePresenterProtocol.swift in Sources */,
 				3460E94F235F6784003803DC /* ImageCollectionViewCell.swift in Sources */,
 				344F583B235E21E500206AC1 /* SliderCollectionViewCell.swift in Sources */,
+				3446928123605E7A0095CAC9 /* ArticleCollectionViewCell.swift in Sources */,
 				347AA538235875190008AA2D /* StaticHeaderPlugin.swift in Sources */,
 				34F08493235C807000224187 /* ImageTableViewCell.swift in Sources */,
 				344F582F235DA19A00206AC1 /* Tag.swift in Sources */,
@@ -712,6 +720,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C86JD592M;
 				INFOPLIST_FILE = "$(SRCROOT)/Sabq/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -731,6 +740,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C86JD592M;
 				INFOPLIST_FILE = "$(SRCROOT)/Sabq/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (

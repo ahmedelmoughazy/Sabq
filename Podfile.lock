@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.9.0)
+  - CircleImageView (1.0.1)
   - LocalizedTimeAgo (1.3.0)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
@@ -14,6 +15,7 @@ PODS:
   - SwiftyImage (1.5.1)
 
 DEPENDENCIES:
+  - CircleImageView
   - LocalizedTimeAgo
   - Moya
   - SDWebImage
@@ -23,6 +25,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CircleImageView
     - LocalizedTimeAgo
     - Moya
     - Result
@@ -32,6 +35,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  CircleImageView: 3339a6d2755333cf9fefdc9a76aa00d62957c7fb
   LocalizedTimeAgo: d157908f7e83a8cdd015a669a57d17829d83f112
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
@@ -39,6 +43,6 @@ SPEC CHECKSUMS:
   SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
   SwiftyImage: 88a8c90ee3963a498de728c4ccdb079b4820cef0
 
-PODFILE CHECKSUM: a1692ab86e29eadd24946df07e4b4f3dbabed542
+PODFILE CHECKSUM: b291ebfe157fd03f09beb1da820e70d4f90dfb05
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.8.3

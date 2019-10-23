@@ -10,6 +10,10 @@ import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +28,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
     }
 
     func configureCell(comic: Material){
+        self.newsImageView.sd_setImage(with:
+            URL(string: comic.coverPhoto!), placeholderImage: UIImage(named: "img_news_img_1"))
+        self.titleLabel.text = comic.title
+        self.timeLabel.text = (comic.publishDate?.convertToDate())?.shortTimeAgo()
     }
 }
