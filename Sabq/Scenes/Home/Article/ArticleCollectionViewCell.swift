@@ -30,7 +30,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     func configureCell(material: Material){
         self.autherImageView.layer.cornerRadius = self.autherImageView.frame.size.width / 2.0
         self.autherImageView.sd_setImage(with:
-            URL(string: material.authorImg!), placeholderImage: UIImage(named: "img_news_img_1"))
+            URL(string: material.authorImg!), placeholderImage: UIImage(named: "placeholder"))
         self.titleLabel.text = material.title
         self.autherNameLabel.text = material.authorName
     }

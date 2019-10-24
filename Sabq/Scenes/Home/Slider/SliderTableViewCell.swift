@@ -11,7 +11,7 @@ import UIKit
 class SliderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var sliderCollectionView: UICollectionView!
-    var sliders:[Material]?
+    var sliders:[Material] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,13 +46,13 @@ extension SliderTableViewCell: UICollectionViewDelegate {
 
 extension SliderTableViewCell: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sliders!.count
+        return sliders.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = sliderCollectionView.dequeueReusableCell(withReuseIdentifier: SliderCollectionViewCell.identifier, for: indexPath) as? SliderCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureCell(material: sliders![indexPath.row])
+        cell.configureCell(material: sliders[indexPath.row])
         return cell
     }
     

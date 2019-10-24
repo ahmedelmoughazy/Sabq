@@ -7,11 +7,31 @@
 //
 
 import UIKit
+import LoadingPlaceholderView
 
 class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
 
-    @IBOutlet weak var homeTableView: UITableView!
+    @IBOutlet weak var homeTableView: UITableView! {
+        didSet {
+            homeTableView.coverableCellsIdentifiers = cellsIdentifiers
+        }
+    }
     private var adapter = HomeAdapter()
+    private var loadingPlaceholderView = LoadingPlaceholderView()
+    private var cellsIdentifiers = [
+        "SliderTableViewCell",
+        "MaterialTableViewCell",
+        "MaterialTableViewCell",
+        "MaterialTableViewCell",
+        "MaterialTableViewCell",
+        "MaterialTableViewCell",
+        "MaterialTableViewCell"
+    ]
+    
+    private func setupLoadingPlaceholderView() {
+        loadingPlaceholderView.gradientColor = .white
+        loadingPlaceholderView.backgroundColor = .white
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +39,7 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         homeTableView.dataSource = adapter
         homeTableView.delegate = self
         homeTableView.separatorStyle = .none
+        
         
         homeTableView.register(ArticleTableViewCell.nib, forCellReuseIdentifier: ArticleTableViewCell.identifier)
         homeTableView.register(VideoTableViewCell.nib, forCellReuseIdentifier: VideoTableViewCell.identifier)
@@ -28,8 +49,11 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         
         adapter.setTableView(newsTable: homeTableView)
         adapter.reloadData = reloadActorsData
+        setupLoadingPlaceholderView()
+        loadingPlaceholderView.cover(view)
         presenter.loadHome()
     }
+
 
     func reloadActorsData(){
         homeTableView.separatorStyle = .singleLine
@@ -38,6 +62,7 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
     
     func renderViewWithObjects(sliders: [Material], materials: [Material]) {
         adapter.addSlidersAndMaterials(sliders: sliders, materials: materials)
+        AMShimmer.stop(for: homeTableView)
         presenter.loadVideos()
     }
     

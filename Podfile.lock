@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (4.9.0)
+  - AMShimmer (1.0.6)
+  - anim (1.2.8)
   - CircleImageView (1.0.1)
+  - LoadingPlaceholderView (0.0.2)
   - LocalizedTimeAgo (1.3.0)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
@@ -11,38 +14,55 @@ PODS:
   - SDWebImage (5.2.3):
     - SDWebImage/Core (= 5.2.3)
   - SDWebImage/Core (5.2.3)
+  - Skeleton (0.3.1)
   - SkeletonView (1.8.2)
   - SwiftyImage (1.5.1)
+  - Windless (0.1.5)
 
 DEPENDENCIES:
+  - AMShimmer
+  - anim
   - CircleImageView
+  - LoadingPlaceholderView
   - LocalizedTimeAgo
   - Moya
   - SDWebImage
+  - Skeleton
   - SkeletonView
   - SwiftyImage
+  - Windless
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AMShimmer
+    - anim
     - CircleImageView
+    - LoadingPlaceholderView
     - LocalizedTimeAgo
     - Moya
     - Result
     - SDWebImage
+    - Skeleton
     - SkeletonView
     - SwiftyImage
+    - Windless
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  AMShimmer: 681eeaaedf9fc4e390e95e9dd6fe59df947cfee0
+  anim: a07cd14b3279a69781bc3da9a42739b6e2c77344
   CircleImageView: 3339a6d2755333cf9fefdc9a76aa00d62957c7fb
+  LoadingPlaceholderView: e913f5ae2673612d405ce395acca7cedb1bfaa81
   LocalizedTimeAgo: d157908f7e83a8cdd015a669a57d17829d83f112
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
+  Skeleton: 4b11a4aa6fb289626aa7e486f0b16b9b394d0ba4
   SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
   SwiftyImage: 88a8c90ee3963a498de728c4ccdb079b4820cef0
+  Windless: c6b7d63ac3a0c7e6b241e316650d4605abf71894
 
-PODFILE CHECKSUM: b291ebfe157fd03f09beb1da820e70d4f90dfb05
+PODFILE CHECKSUM: 07a70dce9f802bcedf8bd16e7f8a374ec0fccae8
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.8.3

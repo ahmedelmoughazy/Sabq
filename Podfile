@@ -5,11 +5,18 @@ target 'Sabq' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-	pod 'Moya'
+  pod 'Moya'
   pod 'SDWebImage'
-	pod 'LocalizedTimeAgo'
-	pod 'SwiftyImage'
+  pod 'LocalizedTimeAgo'
+ # pod 'LoadingShimmer'
+  pod 'SwiftyImage'
   pod 'SkeletonView'
   pod 'CircleImageView'
-  # Pods for Sabq
+ # pod 'ListPlaceholder' 
+  pod 'AMShimmer'
+# Pods for Sabq
+pod 'Windless'
+pod 'anim'
+pod "Skeleton"
+pod 'LoadingPlaceholderView'
 end

@@ -29,7 +29,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     func configureCell(comic: Material){
         self.newsImageView.sd_setImage(with:
-            URL(string: comic.coverPhoto!), placeholderImage: UIImage(named: "img_news_img_1"))
+            URL(string: comic.coverPhoto!), placeholderImage: UIImage(named: "placeholder"))
         self.titleLabel.text = comic.title
         self.timeLabel.text = (comic.publishDate?.convertToDate())?.shortTimeAgo()
     }

@@ -34,7 +34,7 @@ class SliderCollectionViewCell: UICollectionViewCell {
     func configureCell(material: Material){
         self.titleLabel.text       = material.title
         self.descriptionLabel.text = material.description!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-        self.newsImageView.sd_setImage(with: URL(string: material.coverPhoto!), placeholderImage: UIImage(named: "img_news_img_1"))
+        self.newsImageView.sd_setImage(with: URL(string: material.coverPhoto!), placeholderImage: UIImage(named: "placeholder"))
         self.timeLabel.text = (material.publishDate?.convertToDate())?.shortTimeAgo()
         self.viewsImageView.image = material.noOfViews! > 5000 ? UIImage(named: "ic_views_icon_hot"): UIImage(named: "ic_views_icon")
         self.viewsLabel.text = String(describing: material.noOfViews!)
