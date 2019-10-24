@@ -22,9 +22,6 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         "SliderTableViewCell",
         "MaterialTableViewCell",
         "MaterialTableViewCell",
-        "MaterialTableViewCell",
-        "MaterialTableViewCell",
-        "MaterialTableViewCell",
         "MaterialTableViewCell"
     ]
     
@@ -62,7 +59,8 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
     
     func renderViewWithObjects(sliders: [Material], materials: [Material]) {
         adapter.addSlidersAndMaterials(sliders: sliders, materials: materials)
-        AMShimmer.stop(for: homeTableView)
+        homeTableView.reloadData()
+        loadingPlaceholderView.uncover()
         presenter.loadVideos()
     }
     
@@ -98,6 +96,8 @@ extension HomeViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("clicked on \(indexPath.row)")
-        //  PeopleRouter.showDetail(at: self.navigationController!, with: (peoplePresenter?.getPerson(index:indexPath.row))!)
+        if let item = adapter.getItem(at: indexPath.row) {
+            NewsRouter.moveToDetails(material: item)
+        }
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 class SliderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var sliderCollectionView: UICollectionView!
+    @IBOutlet weak var shimmerView: UIView!
     var sliders:[Material] = []
     
     override func awakeFromNib() {
@@ -19,8 +20,6 @@ class SliderTableViewCell: UITableViewCell {
         sliderCollectionView.delegate = self
         sliderCollectionView.dataSource = self
         sliderCollectionView.register(SliderCollectionViewCell.nib, forCellWithReuseIdentifier: SliderCollectionViewCell.identifier)
-        
-        print("registered")
     }
 
     static var nib:UINib {
@@ -31,6 +30,10 @@ class SliderTableViewCell: UITableViewCell {
         return String(describing: self)
     }
     
+    func configureCell(sliders:[Material]){
+        self.shimmerView.isHidden = true
+        self.sliders.append(contentsOf: sliders)
+    }
 }
 
 extension SliderTableViewCell: UICollectionViewDelegateFlowLayout {

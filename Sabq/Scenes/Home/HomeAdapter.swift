@@ -96,6 +96,15 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal{
         
     }
     
+    func getItem(at index: Int) -> Material? {
+        if let item = list![index] as? MaterialItem {
+            //configure the cell
+            return item.material
+        } else {
+            return nil
+        }
+        
+    }
     func count() -> Int {
         return list?.count ?? 0
     }
@@ -139,7 +148,7 @@ extension HomeAdapter: UITableViewDataSource {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: SliderTableViewCell.identifier, for: indexPath) as? SliderTableViewCell {
                 //configure the cell
-                cell.sliders = slider[indexPath.row].sliders
+                cell.configureCell(sliders: slider[indexPath.row].sliders) 
                 return cell
             }
         default:

@@ -46,8 +46,13 @@ class NewsRouter {
         window?.makeKeyAndVisible()
     }
 
-    class func setRTL() {
-        UIView.appearance().semanticContentAttribute = .forceRightToLeft
-        UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
+    class func moveToDetails(material: Material) {
+        let detailsViewController = DetailsModule.getDetailsView(material: material)
+        homeNavigationController?.pushViewController(detailsViewController, animated: true)
     }
+    
+//    class func setRTL() {
+//        UIView.appearance().semanticContentAttribute = .forceRightToLeft
+//        UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
+//    }
 }

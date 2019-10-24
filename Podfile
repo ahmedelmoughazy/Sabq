@@ -8,15 +8,5 @@ target 'Sabq' do
   pod 'Moya'
   pod 'SDWebImage'
   pod 'LocalizedTimeAgo'
- # pod 'LoadingShimmer'
-  pod 'SwiftyImage'
-  pod 'SkeletonView'
-  pod 'CircleImageView'
- # pod 'ListPlaceholder' 
-  pod 'AMShimmer'
-# Pods for Sabq
-pod 'Windless'
-pod 'anim'
-pod "Skeleton"
-pod 'LoadingPlaceholderView'
+  pod 'LoadingPlaceholderView', :inhibit_warnings => true
 end

@@ -9,7 +9,10 @@
 import Foundation
 
 protocol HomePresenterProtocol: BasePresenterProtocol {
-    
+    func loadHome()
+    func loadImages()
+    func loadVideos()
+    func loadArticles()
 }
 
 protocol HomeViewProtocol:BaseViewProtocol {
