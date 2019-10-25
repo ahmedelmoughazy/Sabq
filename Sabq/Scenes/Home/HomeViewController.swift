@@ -9,7 +9,7 @@
 import UIKit
 import LoadingPlaceholderView
 
-class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
+class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol, UITableViewDelegate{
 
     @IBOutlet weak var homeTableView: UITableView! {
         didSet {
@@ -77,9 +77,7 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
     func renderViewWithObjects(articles: [Material]) {
         adapter.addArticles(items: articles)
     }
-}
-
-extension HomeViewController: UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -101,3 +99,26 @@ extension HomeViewController: UITableViewDelegate{
         }
     }
 }
+
+//extension HomeViewController: UITableViewDelegate{
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        switch indexPath.section {
+//        case 0:
+//            return UIScreen.main.bounds.height/2
+//        default:
+//            switch indexPath.row {
+//            case 5,11,17:
+//                return UIScreen.main.bounds.height/2.9
+//            default:
+//                return 130
+//            }
+//        }
+//    }
+//    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print("clicked on \(indexPath.row)")
+//        if let item = adapter.getItem(at: indexPath.row) {
+//            NewsRouter.moveToDetails(material: item)
+//        }
+//    }
+//}

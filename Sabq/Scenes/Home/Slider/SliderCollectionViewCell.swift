@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class SliderCollectionViewCell: UICollectionViewCell {
 
@@ -35,8 +36,9 @@ class SliderCollectionViewCell: UICollectionViewCell {
         self.titleLabel.text       = material.title
         self.descriptionLabel.text = material.description!.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         self.newsImageView.sd_setImage(with: URL(string: material.coverPhoto!), placeholderImage: UIImage(named: "placeholder"))
-        self.timeLabel.text = (material.publishDate?.convertToDate())?.shortTimeAgo()
+        self.timeLabel.text = (material.publishDate?.convertToDate())?.timeAgo()
         self.viewsImageView.image = material.noOfViews! > 5000 ? UIImage(named: "ic_views_icon_hot"): UIImage(named: "ic_views_icon")
-        self.viewsLabel.text = String(describing: material.noOfViews!)
+        self.viewsLabel.text = material.noOfViews?.localizedNumber()
+        
     }
 }

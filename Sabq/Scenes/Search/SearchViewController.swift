@@ -12,6 +12,6 @@ class SearchViewController: BaseViewController<SearchPresenter>, SearchViewProto
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Search"
+        self.title = NSLocalizedString("Search", comment: "tabbar item title")
     }
 }

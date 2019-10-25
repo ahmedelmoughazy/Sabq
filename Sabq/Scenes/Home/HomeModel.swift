@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import Result
 
 class HomeModel: HomeModelProtocol {
     
-    func getSliders(compelation: @escaping (Result<Any, Error>) -> Void) {
+    func getSliders(compelation: @escaping (Result<Any, AnyError>) -> Void) {
         NetworkManager.shared.getSliders { (result, statusCode) in
             do {
                 let results = try result.get()
@@ -21,7 +22,7 @@ class HomeModel: HomeModelProtocol {
         }
     }
     
-    func getImages(compelation: @escaping (Result<Any, Error>) -> Void) {
+    func getImages(compelation: @escaping (Result<Any, AnyError>) -> Void) {
         NetworkManager.shared.getImages { (result, statusCode) in
             do {
                 let results = try result.get()
@@ -32,7 +33,7 @@ class HomeModel: HomeModelProtocol {
         }
     }
     
-    func getVideos(compelation: @escaping (Result<Any, Error>) -> Void) {
+    func getVideos(compelation: @escaping (Result<Any, AnyError>) -> Void) {
         NetworkManager.shared.getVideos { (result, statusCode) in
             do {
                 let results = try result.get()
@@ -43,7 +44,7 @@ class HomeModel: HomeModelProtocol {
         }
     }
     
-    func getArticles(compelation: @escaping (Result<Any, Error>) -> Void) {
+    func getArticles(compelation: @escaping (Result<Any, AnyError>) -> Void) {
         NetworkManager.shared.getArticles { (result, statusCode) in
             do {
                 let results = try result.get()

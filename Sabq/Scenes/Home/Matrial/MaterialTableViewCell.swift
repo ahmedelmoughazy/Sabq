@@ -35,8 +35,8 @@ class MaterialTableViewCell: UITableViewCell {
         self.titleLabel.text = material.title
         self.newsImageView.sd_setImage(with:
             URL(string: material.coverPhoto!), placeholderImage: UIImage(named: "placeholder"))
-        self.timeLabel.text = (material.publishDate?.convertToDate())?.shortTimeAgo()
+        self.timeLabel.text = (material.publishDate?.convertToDate())?.timeAgo()
         self.viewsImageView.image = material.noOfViews! > 5000 ? UIImage(named: "ic_views_icon_hot"): UIImage(named: "ic_views_icon")
-        self.viewsLabel.text = String(describing: material.noOfViews!)
+        self.viewsLabel.text = material.noOfViews?.localizedNumber()
     }
 }

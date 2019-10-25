@@ -12,7 +12,7 @@ class BookmarksViewController: BaseViewController<BookmarksPresenter>, Bookmarks
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Bookmarks"
+        self.title = NSLocalizedString("Bookmarks", comment: "tabbar item title")
     }
     
 }

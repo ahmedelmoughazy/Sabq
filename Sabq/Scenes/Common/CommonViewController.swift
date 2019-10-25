@@ -12,6 +12,6 @@ class CommonViewController: BaseViewController<CommonPresenter>, CommonViewProto
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Common"
+        self.title = NSLocalizedString("Common", comment: "tabbar item title")
     }
 }

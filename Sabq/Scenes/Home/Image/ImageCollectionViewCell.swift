@@ -31,6 +31,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
         self.newsImageView.sd_setImage(with:
             URL(string: comic.coverPhoto!), placeholderImage: UIImage(named: "placeholder"))
         self.titleLabel.text = comic.title
-        self.timeLabel.text = (comic.publishDate?.convertToDate())?.shortTimeAgo()
+        self.timeLabel.text = (comic.publishDate?.convertToDate())?.timeAgo()
     }
 }

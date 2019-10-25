@@ -12,7 +12,7 @@ class SectionsViewController: BaseViewController<SectionsPresenter>, SectionsVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Sections"
+        self.title = NSLocalizedString("Sections", comment: "tabbar item title")
     }
 
 }
