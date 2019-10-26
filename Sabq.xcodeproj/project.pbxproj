@@ -79,6 +79,8 @@
 		6B1D96F72360DDBC00614704 /* CommonModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D96F32360DDBC00614704 /* CommonModule.swift */; };
 		6B1D96F82360DDBC00614704 /* CommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D96F42360DDBC00614704 /* CommonProtocols.swift */; };
 		6B1D96F92360DDBC00614704 /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D96F52360DDBC00614704 /* CommonModel.swift */; };
+		6B2169C323649607002F158F /* DetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2169C123649607002F158F /* DetailsCollectionViewCell.swift */; };
+		6B2169C423649607002F158F /* DetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2169C223649607002F158F /* DetailsCollectionViewCell.xib */; };
 		6B34ABC12359E4E500C81E40 /* BaseModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B34ABB92359E4E400C81E40 /* BaseModelProtocol.swift */; };
 		6B34ABC22359E4E500C81E40 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B34ABBA2359E4E400C81E40 /* BaseModel.swift */; };
 		6B34ABC32359E4E500C81E40 /* BaseListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B34ABBB2359E4E400C81E40 /* BaseListAdapter.swift */; };
@@ -170,6 +172,8 @@
 		6B1D96F32360DDBC00614704 /* CommonModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonModule.swift; sourceTree = "<group>"; };
 		6B1D96F42360DDBC00614704 /* CommonProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonProtocols.swift; sourceTree = "<group>"; };
 		6B1D96F52360DDBC00614704 /* CommonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
+		6B2169C123649607002F158F /* DetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		6B2169C223649607002F158F /* DetailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsCollectionViewCell.xib; sourceTree = "<group>"; };
 		6B34ABB92359E4E400C81E40 /* BaseModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModelProtocol.swift; sourceTree = "<group>"; };
 		6B34ABBA2359E4E400C81E40 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		6B34ABBB2359E4E400C81E40 /* BaseListAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseListAdapter.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				3461F58B23622995006072F6 /* DetailsProtocols.swift */,
 				3461F58423622786006072F6 /* DetailsViewController.swift */,
 				3461F58523622786006072F6 /* DetailsViewController.xib */,
+				6B2169C123649607002F158F /* DetailsCollectionViewCell.swift */,
+				6B2169C223649607002F158F /* DetailsCollectionViewCell.xib */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -631,6 +637,7 @@
 				34F08484235C689000224187 /* SliderTableViewCell.xib in Resources */,
 				347AA4FE235853B30008AA2D /* Assets.xcassets in Resources */,
 				34F08480235C66CA00224187 /* HomeViewController.xib in Resources */,
+				6B2169C423649607002F158F /* DetailsCollectionViewCell.xib in Resources */,
 				344F583C235E21E500206AC1 /* SliderCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -747,6 +754,7 @@
 				6B34ABC12359E4E500C81E40 /* BaseModelProtocol.swift in Sources */,
 				347AA4F7235853B10008AA2D /* AppDelegate.swift in Sources */,
 				344F582C235DA19A00206AC1 /* Material.swift in Sources */,
+				6B2169C323649607002F158F /* DetailsCollectionViewCell.swift in Sources */,
 				6B1D96C62360DC3900614704 /* CommonViewController.swift in Sources */,
 				344F582E235DA19A00206AC1 /* Videos.swift in Sources */,
 				6B1D96E62360DDA200614704 /* SearchModel.swift in Sources */,

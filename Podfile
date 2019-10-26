@@ -9,4 +9,5 @@ target 'Sabq' do
   pod 'SDWebImage'
   pod 'LocalizedTimeAgo'
   pod 'LoadingPlaceholderView', :inhibit_warnings => true
+  pod 'MaterialComponents/PageControl'
 end
