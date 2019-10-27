@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SearchPresenter: SearchPresenterProtocol{
+class SearchPresenter: SearchPresenterProtocol {
     
     private var searchView: SearchViewProtocol
     private var searchModel: SearchModelProtocol
@@ -17,6 +17,5 @@ class SearchPresenter: SearchPresenterProtocol{
         searchView = view
         searchModel = model
     }
-    
     
 }

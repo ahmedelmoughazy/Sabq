@@ -31,12 +31,14 @@ class MaterialTableViewCell: UITableViewCell {
         return String(describing: self)
     }
     
-    func configureCell(material: Material){
+    func configureCell(material: Material) {
         self.titleLabel.text = material.title
         self.newsImageView.sd_setImage(with:
             URL(string: material.coverPhoto!), placeholderImage: UIImage(named: "placeholder"))
         self.timeLabel.text = (material.publishDate?.convertToDate())?.timeAgo()
-        self.viewsImageView.image = material.noOfViews! > 5000 ? UIImage(named: "ic_views_icon_hot"): UIImage(named: "ic_views_icon")
+        self.viewsImageView.image = material.noOfViews! > 5000 ? UIImage(
+            named: "ic_views_icon_hot"): UIImage(
+                named: "ic_views_icon")
         self.viewsLabel.text = material.noOfViews?.localizedNumber()
     }
 }

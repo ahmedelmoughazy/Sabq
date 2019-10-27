@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BookmarksPresenter: BookmarksPresenterProtocol{
+class BookmarksPresenter: BookmarksPresenterProtocol {
     
     private var bookmarksView: BookmarksViewProtocol
     private var bookmarksModel: BookmarksModelProtocol
@@ -17,6 +17,5 @@ class BookmarksPresenter: BookmarksPresenterProtocol{
         bookmarksView = view
         bookmarksModel = model
     }
-    
     
 }

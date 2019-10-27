@@ -37,12 +37,16 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         homeTableView.delegate = self
         homeTableView.separatorStyle = .none
         
-        
-        homeTableView.register(ArticleTableViewCell.nib, forCellReuseIdentifier: ArticleTableViewCell.identifier)
-        homeTableView.register(VideoTableViewCell.nib, forCellReuseIdentifier: VideoTableViewCell.identifier)
-        homeTableView.register(ImageTableViewCell.nib, forCellReuseIdentifier: ImageTableViewCell.identifier)
-        homeTableView.register(MaterialTableViewCell.nib, forCellReuseIdentifier: MaterialTableViewCell.identifier)
-        homeTableView.register(SliderTableViewCell.nib, forCellReuseIdentifier: SliderTableViewCell.identifier)
+        homeTableView.register(ArticleTableViewCell.nib,
+                               forCellReuseIdentifier: ArticleTableViewCell.identifier)
+        homeTableView.register(VideoTableViewCell.nib,
+                               forCellReuseIdentifier: VideoTableViewCell.identifier)
+        homeTableView.register(ImageTableViewCell.nib,
+                               forCellReuseIdentifier: ImageTableViewCell.identifier)
+        homeTableView.register(MaterialTableViewCell.nib,
+                               forCellReuseIdentifier: MaterialTableViewCell.identifier)
+        homeTableView.register(SliderTableViewCell.nib,
+                               forCellReuseIdentifier: SliderTableViewCell.identifier)
         
         adapter.setTableView(newsTable: homeTableView)
         adapter.reloadData = reloadActorsData
@@ -51,8 +55,7 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         presenter.loadHome()
     }
 
-
-    func reloadActorsData(){
+    func reloadActorsData() {
         homeTableView.separatorStyle = .singleLine
         homeTableView.reloadData()
     }
@@ -80,7 +83,7 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
 
 }
 
-extension HomeViewController: UITableViewDelegate{
+extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:

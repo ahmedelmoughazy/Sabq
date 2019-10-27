@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommonViewController: BaseViewController<CommonPresenter>, CommonViewProtocol{
+class CommonViewController: BaseViewController<CommonPresenter>, CommonViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()

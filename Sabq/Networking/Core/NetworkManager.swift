@@ -6,7 +6,6 @@
 //  Copyright © 2019 Ibtikar Technologies, Co. Ltd. All rights reserved.
 //
 
-
 import Foundation
 import Moya
 

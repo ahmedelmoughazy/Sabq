@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CommonPresenter: CommonPresenterProtocol{
+class CommonPresenter: CommonPresenterProtocol {
     
     private var homeView: CommonViewProtocol
     private var homeModel: CommonModelProtocol
@@ -17,6 +17,5 @@ class CommonPresenter: CommonPresenterProtocol{
         homeView = view
         homeModel = model
     }
-    
-    
+
 }

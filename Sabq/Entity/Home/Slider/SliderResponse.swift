@@ -9,7 +9,7 @@ struct SliderResponse: Codable {
         
         case slider = "slider"
         case materials = "materials"
-        case code = "code"
+        case code = "cdode"
     }
     
     init(from decoder: Decoder) throws {

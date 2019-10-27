@@ -25,6 +25,6 @@ protocol PresenterLifeCycleProtocol {
     optional func viewDidDisappear()
 }
 
-protocol BasePresenterProtocol: PresenterLifeCycleProtocol{
+protocol BasePresenterProtocol: PresenterLifeCycleProtocol {
     
 }

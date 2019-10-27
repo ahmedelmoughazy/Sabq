@@ -7,12 +7,11 @@
 
 import Foundation
 import Moya
-import Result
 
 extension NetworkManager {
     
     func getSliders(completion: @escaping (
-        _ result: Result<SliderResponse, NetworkError>,
+        _ result: Swift.Result<SliderResponse, NetworkError>,
         _ statusCode: StatusCode?
         ) -> Void) {
         provider.request(MultiTarget(NewsService.slider)) { (result) in
@@ -45,7 +44,7 @@ extension NetworkManager {
     }
     
     func getImages(completion: @escaping (
-        _ result: Result<ImageResponse, NetworkError>,
+        _ result: Swift.Result<ImageResponse, NetworkError>,
         _ statusCode: StatusCode?
         ) -> Void) {
         provider.request(MultiTarget(NewsService.images)) { (result) in
@@ -78,7 +77,7 @@ extension NetworkManager {
     }
     
     func getVideos(completion: @escaping (
-        _ result: Result<VideoResponse, NetworkError>,
+        _ result: Swift.Result<VideoResponse, NetworkError>,
         _ statusCode: StatusCode?
         ) -> Void) {
         provider.request(MultiTarget(NewsService.videos)) { (result) in
@@ -111,7 +110,7 @@ extension NetworkManager {
     }
     
     func getArticles(completion: @escaping (
-        _ result: Result<ArticleResponse, NetworkError>,
+        _ result: Swift.Result<ArticleResponse, NetworkError>,
         _ statusCode: StatusCode?
         ) -> Void) {
         provider.request(MultiTarget(NewsService.articles)) { (result) in

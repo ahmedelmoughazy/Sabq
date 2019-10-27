@@ -13,7 +13,7 @@ enum `Type`:String, Codable {
     case system
     case mapping
 }
-struct NetworkError: Codable, Error{
+struct NetworkError: Codable, Error {
    
     //enum (busineess , system , mapping) will know from moya error by (type / status code)
     var code: Int?

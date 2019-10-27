@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Result
 
 protocol HomePresenterProtocol: BasePresenterProtocol {
     func loadHome()
@@ -25,11 +24,11 @@ protocol HomeViewProtocol:BaseViewProtocol {
 
 protocol HomeModelProtocol:BaseModelProtocol {
 
-    func getSliders(compelation: @escaping (Result<Any, AnyError>) -> Void)
+    func getSliders(compelation: @escaping (Result<Any, Error>) -> Void)
     
-    func getImages(compelation: @escaping (Result<Any, AnyError>) -> Void)
+    func getImages(compelation: @escaping (Result<Any, Error>) -> Void)
     
-    func getVideos(compelation: @escaping (Result<Any, AnyError>) -> Void)
+    func getVideos(compelation: @escaping (Result<Any, Error>) -> Void)
     
-    func getArticles(compelation: @escaping (Result<Any, AnyError>) -> Void)
+    func getArticles(compelation: @escaping (Result<Any, Error>) -> Void)
 }

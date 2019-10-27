@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SectionsPresenter: SectionsPresenterProtocol{
+class SectionsPresenter: SectionsPresenterProtocol {
     
     private var sectionsView: SectionsViewProtocol
     private var sectionsModel: SectionsModelProtocol
@@ -17,6 +17,5 @@ class SectionsPresenter: SectionsPresenterProtocol{
         sectionsView = view
         sectionsModel = model
     }
-    
     
 }

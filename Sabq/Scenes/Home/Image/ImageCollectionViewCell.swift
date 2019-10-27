@@ -27,7 +27,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         return String(describing: self)
     }
 
-    func configureCell(comic: Material){
+    func configureCell(comic: Material) {
         self.newsImageView.sd_setImage(with:
             URL(string: comic.coverPhoto!), placeholderImage: UIImage(named: "placeholder"))
         self.titleLabel.text = comic.title

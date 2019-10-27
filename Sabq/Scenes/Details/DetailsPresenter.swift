@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DetailsPresenter: DetailsPresenterProtocol{
+class DetailsPresenter: DetailsPresenterProtocol {
     
     private var detailsView: DetailsViewProtocol
     private var detailsModel: DetailsModelProtocol
@@ -18,7 +18,7 @@ class DetailsPresenter: DetailsPresenterProtocol{
         detailsModel = model
     }
     
-    func loadDetailsData(){
+    func loadDetailsData() {
         let data = detailsModel.getData()
         detailsView.renderViewWithObject(material: data)
     }

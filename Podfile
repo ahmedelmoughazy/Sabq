@@ -5,7 +5,7 @@ target 'Sabq' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'Moya'
+  pod 'Moya', :inhibit_warnings => true
   pod 'SDWebImage'
   pod 'LocalizedTimeAgo'
   pod 'LoadingPlaceholderView', :inhibit_warnings => true

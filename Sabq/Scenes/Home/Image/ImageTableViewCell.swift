@@ -18,7 +18,8 @@ class ImageTableViewCell: UITableViewCell {
         // Initialization code
         imagesCollectionView.delegate = self
         imagesCollectionView.dataSource = self
-        imagesCollectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
+        imagesCollectionView.register(ImageCollectionViewCell.nib,
+                                      forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
     }
     
     static var nib:UINib {
@@ -36,25 +37,32 @@ class ImageTableViewCell: UITableViewCell {
 
 extension ImageTableViewCell: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.height , height: collectionView.frame.height)
     }
 }
 
 extension ImageTableViewCell: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
         NewsRouter.moveToDetails(material: images![indexPath.row])
     }
 }
 
-extension ImageTableViewCell: UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension ImageTableViewCell: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return images!.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.identifier, for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ImageCollectionViewCell.identifier,
+            for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell() }
         cell.configureCell(comic: images![indexPath.row])
         return cell
     }

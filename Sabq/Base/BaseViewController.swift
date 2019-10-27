@@ -17,4 +17,3 @@ class BaseViewController<Presenter:BasePresenterProtocol>: UIViewController, Bas
         self.presenter = presenter
     }
 }
-

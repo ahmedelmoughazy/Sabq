@@ -50,12 +50,13 @@ extension ArticleTableViewCell: UICollectionViewDelegate {
     }
 }
 
-extension ArticleTableViewCell: UICollectionViewDataSource{
+extension ArticleTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return articles!.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: ArticleCollectionViewCell.identifier,
             for: indexPath) as? ArticleCollectionViewCell else { return UICollectionViewCell() }

@@ -38,6 +38,7 @@ class SliderTableViewCell: UITableViewCell {
         self.sliders.append(contentsOf: sliders)
         self.setupPageControl()
     }
+    
     func setupPageControl() {
         pageControl.numberOfPages = sliders.count
         pageControl.hidesForSinglePage = true

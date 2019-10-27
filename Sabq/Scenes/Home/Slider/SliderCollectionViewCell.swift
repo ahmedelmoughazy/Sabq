@@ -20,16 +20,19 @@ class SliderCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        newsImageView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height)/4)
+        newsImageView.frame.size = CGSize(width: UIScreen.main.bounds.width,
+                                          height: (UIScreen.main.bounds.height)/4)
     }
 
     static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
+    
     static var identifier: String {
         return String(describing: self)
     }
-    func configureCell(material: Material){
+    
+    func configureCell(material: Material) {
         self.titleLabel.text = material.title
         self.descriptionLabel.text = material.description!.replacingOccurrences(of: "<[^>]+>",
                                                                                 with: "",

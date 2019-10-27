@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 enum HomeItemType {
     case material
     case images
@@ -21,7 +20,7 @@ protocol HomeListItem {
     var type: HomeItemType { get }
 }
 
-class HomeAdapter: NSObject, BaseListAdapterProtocal{
+class HomeAdapter: NSObject, BaseListAdapterProtocal {
     typealias DataType = HomeListItem
     internal var list: [HomeListItem]?
     var slider = [SliderListItem]()
@@ -118,6 +117,7 @@ extension HomeAdapter: UITableViewDataSource {
             return count()
         }
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.section
         let item = list![indexPath.row]

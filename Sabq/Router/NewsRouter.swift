@@ -17,11 +17,21 @@ class NewsRouter {
     class func startRouting(at window: UIWindow?) {
         
         //setup tabbar icons
-        let bookmarksItem = UITabBarItem(title: NSLocalizedString("Bookmarks", comment: "tabbar item title") , image: UIImage(named: "ic_bookmark"), selectedImage: UIImage(named: "ic_bookmark"))
-        let sectionsItem = UITabBarItem(title: NSLocalizedString("Sections", comment: "tabbar item title") , image: UIImage(named: "ic_list"), selectedImage: UIImage(named: "ic_list"))
-        let commonItem = UITabBarItem(title: NSLocalizedString("Common", comment: "tabbar item title") , image: UIImage(named: "ic_star"), selectedImage: UIImage(named: "ic_star_active"))
-        let searchItem = UITabBarItem(title: NSLocalizedString("Search", comment: "tabbar item title") , image: UIImage(named: "ic_search"), selectedImage: UIImage(named: "ic_search"))
-        let homeItem = UITabBarItem(title: NSLocalizedString("Home", comment: "tabbar item title") , image: UIImage(named: "ic_newspaper_active"), selectedImage: UIImage(named: "ic_newspaper_active"))
+        let bookmarksItem = UITabBarItem(title: NSLocalizedString("Bookmarks", comment: "tabbar item title"),
+                                         image: UIImage(named: "ic_bookmark"),
+                                         selectedImage: UIImage(named: "ic_bookmark"))
+        let sectionsItem = UITabBarItem(title: NSLocalizedString("Sections", comment: "tabbar item title"),
+                                        image: UIImage(named: "ic_list"),
+                                        selectedImage: UIImage(named: "ic_list"))
+        let commonItem = UITabBarItem(title: NSLocalizedString("Common", comment: "tabbar item title"),
+                                      image: UIImage(named: "ic_star"),
+                                      selectedImage: UIImage(named: "ic_star_active"))
+        let searchItem = UITabBarItem(title: NSLocalizedString("Search", comment: "tabbar item title"),
+                                      image: UIImage(named: "ic_search"),
+                                      selectedImage: UIImage(named: "ic_search"))
+        let homeItem = UITabBarItem(title: NSLocalizedString("Home", comment: "tabbar item title"),
+                                    image: UIImage(named: "ic_newspaper_active"),
+                                    selectedImage: UIImage(named: "ic_newspaper_active"))
         
         //setup viewcontrollers
         let bookmarksViewController = BookmarksModule.getBookmarksView()
@@ -40,7 +50,11 @@ class NewsRouter {
         
         //setup tabbar
         self.tabbarController = UITabBarController()
-        self.tabbarController?.viewControllers = [ homeNavigationController!, commonViewController, sectionsViewController, searchViewController, bookmarksViewController]
+        self.tabbarController?.viewControllers = [ homeNavigationController!,
+                                                   commonViewController,
+                                                   sectionsViewController,
+                                                   searchViewController,
+                                                   bookmarksViewController]
 
         window?.rootViewController = tabbarController
         window?.makeKeyAndVisible()

@@ -27,7 +27,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         return String(describing: self)
     }
     
-    func configureCell(material: Material){
+    func configureCell(material: Material) {
         self.autherImageView.layer.cornerRadius = self.autherImageView.frame.size.width / 2.0
         self.autherImageView.sd_setImage(with:
             URL(string: material.authorImg!), placeholderImage: UIImage(named: "placeholder"))
