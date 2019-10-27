@@ -9,9 +9,9 @@
 import UIKit
 import LoadingPlaceholderView
 
-class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol, UITableViewDelegate{
+class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
 
-    @IBOutlet weak var homeTableView: UITableView! {
+    @IBOutlet private weak var homeTableView: UITableView! {
         didSet {
             homeTableView.coverableCellsIdentifiers = cellsIdentifiers
         }
@@ -77,7 +77,10 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol, U
     func renderViewWithObjects(articles: [Material]) {
         adapter.addArticles(items: articles)
     }
-    
+
+}
+
+extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -93,32 +96,9 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol, U
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("clicked on \(indexPath.row)")
         if let item = adapter.getItem(at: indexPath.row) {
             NewsRouter.moveToDetails(material: item)
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-
-//extension HomeViewController: UITableViewDelegate{
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        switch indexPath.section {
-//        case 0:
-//            return UIScreen.main.bounds.height/2
-//        default:
-//            switch indexPath.row {
-//            case 5,11,17:
-//                return UIScreen.main.bounds.height/2.9
-//            default:
-//                return 130
-//            }
-//        }
-//    }
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("clicked on \(indexPath.row)")
-//        if let item = adapter.getItem(at: indexPath.row) {
-//            NewsRouter.moveToDetails(material: item)
-//        }
-//    }
-//}

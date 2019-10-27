@@ -9,50 +9,51 @@
 import UIKit
 
 class VideoTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var videosCollectionView: UICollectionView!
-    
-    var videos: [Material]?
-    
+    @IBOutlet private weak var videosCollectionView: UICollectionView!
+    private var videos: [Material]?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         videosCollectionView.delegate = self
         videosCollectionView.dataSource = self
-        videosCollectionView.register(VideoCollectionViewCell.nib, forCellWithReuseIdentifier: VideoCollectionViewCell.identifier)
+        videosCollectionView.register(VideoCollectionViewCell.nib,
+                                      forCellWithReuseIdentifier: VideoCollectionViewCell.identifier)
     }
-    
-    static var nib:UINib {
+    static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
-    
     static var identifier: String {
         return String(describing: self)
     }
-    
+    func configureCell(videos: [Material]) {
+        self.videos = videos
+    }
 }
 
 extension VideoTableViewCell: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width/3 , height: collectionView.frame.height)
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width/3, height: collectionView.frame.height)
     }
 }
 
 extension VideoTableViewCell: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        NewsRouter.moveToDetails(material: videos![indexPath.row])
+    }
 }
 
-extension VideoTableViewCell: UICollectionViewDataSource{
+extension VideoTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return videos!.count
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.identifier, for: indexPath) as? VideoCollectionViewCell else { return UICollectionViewCell() }
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: VideoCollectionViewCell.identifier,
+            for: indexPath) as? VideoCollectionViewCell else { return UICollectionViewCell() }
         cell.configureCell(comic: videos![indexPath.row])
         return cell
     }
-    
 }

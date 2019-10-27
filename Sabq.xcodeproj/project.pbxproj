@@ -97,6 +97,20 @@
 		6BCBD9BA235A031700296E9D /* ArticleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBD9B6235A031700296E9D /* ArticleResponse.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		340F0634236604B4009347DA /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
 		1C59002BF082B3CFD946615F /* Pods_Sabq.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sabq.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3446927F23605E7A0095CAC9 /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -571,8 +585,10 @@
 				347AA4F0235853B10008AA2D /* Frameworks */,
 				347AA4F1235853B10008AA2D /* Resources */,
 				AB2D03E400F53B88817BE191 /* [CP] Embed Pods Frameworks */,
+				340F0635236604D5009347DA /* ShellScript */,
 			);
 			buildRules = (
+				340F0634236604B4009347DA /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -645,6 +661,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		340F0635236604D5009347DA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		AB2D03E400F53B88817BE191 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

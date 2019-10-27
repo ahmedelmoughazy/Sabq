@@ -10,13 +10,16 @@ import Foundation
 
 class DetailsPresenter: DetailsPresenterProtocol{
     
-    private var DetailsView: DetailsViewProtocol
-    private var DetailsModel: DetailsModelProtocol
+    private var detailsView: DetailsViewProtocol
+    private var detailsModel: DetailsModelProtocol
 
     required init(view: DetailsViewProtocol, model: DetailsModelProtocol) {
-        DetailsView = view
-        DetailsModel = model
+        detailsView = view
+        detailsModel = model
     }
     
-    
+    func loadDetailsData(){
+        let data = detailsModel.getData()
+        detailsView.renderViewWithObject(material: data)
+    }
 }

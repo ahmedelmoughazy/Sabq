@@ -9,9 +9,14 @@
 import Foundation
 
 class DetailsModel: DetailsModelProtocol {
+    
     private var material: Material?
     
-    init(material: Material){
+    init(material: Material) {
         self.material = material
+    }
+    
+    func getData() -> Material {
+        return material!
     }
 }

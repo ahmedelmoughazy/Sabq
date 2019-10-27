@@ -10,25 +10,22 @@ import UIKit
 
 class VideoCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var videoIconView: UIImageView!
-    @IBOutlet weak var newsImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    
+    @IBOutlet private weak var videoIconView: UIImageView!
+    @IBOutlet private weak var newsImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var timeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    static var nib:UINib {
+    static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
-    
     static var identifier: String {
         return String(describing: self)
     }
-    
-    func configureCell(comic: Material){
+    func configureCell(comic: Material) {
         self.newsImageView.sd_setImage(with:
             URL(string: comic.coverPhoto!), placeholderImage: UIImage(named: "placeholder"))
         self.titleLabel.text = comic.title

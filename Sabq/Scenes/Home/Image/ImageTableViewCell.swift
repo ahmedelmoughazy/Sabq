@@ -10,8 +10,8 @@ import UIKit
 
 class ImageTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var imagesCollectionView: UICollectionView!
-    var images: [Material]?
+    @IBOutlet private weak var imagesCollectionView: UICollectionView!
+    private var images: [Material]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +29,9 @@ class ImageTableViewCell: UITableViewCell {
         return String(describing: self)
     }
     
+    func configureCell(images: [Material]) {
+        self.images = images
+    }
 }
 
 extension ImageTableViewCell: UICollectionViewDelegateFlowLayout {
@@ -39,7 +42,9 @@ extension ImageTableViewCell: UICollectionViewDelegateFlowLayout {
 }
 
 extension ImageTableViewCell: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        NewsRouter.moveToDetails(material: images![indexPath.row])
+    }
 }
 
 extension ImageTableViewCell: UICollectionViewDataSource{

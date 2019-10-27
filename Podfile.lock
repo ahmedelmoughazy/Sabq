@@ -2,6 +2,9 @@ PODS:
   - Alamofire (4.9.0)
   - LoadingPlaceholderView (0.0.2)
   - LocalizedTimeAgo (1.3.0)
+  - MaterialComponents/PageControl (93.1.0):
+    - MDFInternationalization
+  - MDFInternationalization (2.0.0)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -15,6 +18,7 @@ PODS:
 DEPENDENCIES:
   - LoadingPlaceholderView
   - LocalizedTimeAgo
+  - MaterialComponents/PageControl
   - Moya
   - SDWebImage
 
@@ -23,6 +27,8 @@ SPEC REPOS:
     - Alamofire
     - LoadingPlaceholderView
     - LocalizedTimeAgo
+    - MaterialComponents
+    - MDFInternationalization
     - Moya
     - Result
     - SDWebImage
@@ -31,10 +37,12 @@ SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   LoadingPlaceholderView: e913f5ae2673612d405ce395acca7cedb1bfaa81
   LocalizedTimeAgo: d157908f7e83a8cdd015a669a57d17829d83f112
+  MaterialComponents: 66d9b4ec49336039e3dd19d4471711b3da92840f
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
 
-PODFILE CHECKSUM: 3852767e4da8b2ea47339165a3abf97cd5f2826b
+PODFILE CHECKSUM: 167fa213eed9ec385ef2e99d12a9a58640e720f6
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.8.3

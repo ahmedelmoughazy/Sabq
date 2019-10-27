@@ -9,12 +9,13 @@
 import Foundation
 
 protocol DetailsPresenterProtocol: BasePresenterProtocol {
-    
+    func loadDetailsData()
 }
 
 protocol DetailsViewProtocol:BaseViewProtocol {
+    func renderViewWithObject(material: Material)
 }
 
 protocol DetailsModelProtocol:BaseModelProtocol {
-
+    func getData() -> Material
 }

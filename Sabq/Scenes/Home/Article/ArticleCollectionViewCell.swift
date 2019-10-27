@@ -10,9 +10,9 @@ import UIKit
 
 class ArticleCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var autherImageView: UIImageView!
-    @IBOutlet weak var autherNameLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var autherImageView: UIImageView!
+    @IBOutlet private weak var autherNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

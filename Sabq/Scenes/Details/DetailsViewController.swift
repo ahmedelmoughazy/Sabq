@@ -16,4 +16,7 @@ class DetailsViewController: BaseViewController<DetailsPresenter>, DetailsViewPr
         // Do any additional setup after loading the view.
     }
 
+    func renderViewWithObject(material: Material) {
+        
+    }
 }
