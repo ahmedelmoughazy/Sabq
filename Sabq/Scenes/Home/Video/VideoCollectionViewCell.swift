@@ -26,8 +26,13 @@ class VideoCollectionViewCell: UICollectionViewCell {
         return String(describing: self)
     }
     func configureCell(comic: Material) {
-        self.newsImageView.sd_setImage(with:
-            URL(string: comic.coverPhoto!), placeholderImage: UIImage(named: "placeholder"))
+        if let imageURL = comic.coverPhoto {
+            self.newsImageView.sd_setImage(with: URL(string: imageURL),
+                                           placeholderImage: #imageLiteral(resourceName: "placeholder") )
+        } else {
+            newsImageView.image =  #imageLiteral(resourceName: "placeholder")
+        }
+        
         self.titleLabel.text = comic.title
         self.timeLabel.text = (comic.publishDate?.convertToDate())?.timeAgo()
     }

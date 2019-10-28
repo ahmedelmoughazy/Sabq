@@ -23,7 +23,7 @@ class MaterialTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    static var nib:UINib {
+    static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
     
@@ -33,12 +33,13 @@ class MaterialTableViewCell: UITableViewCell {
     
     func configureCell(material: Material) {
         self.titleLabel.text = material.title
-        self.newsImageView.sd_setImage(with:
-            URL(string: material.coverPhoto!), placeholderImage: UIImage(named: "placeholder"))
+        if let imageURL = material.coverPhoto {
+            self.newsImageView.sd_setImage(with: URL(string: imageURL),
+                                           placeholderImage: #imageLiteral(resourceName: "placeholder") )
+        } else { newsImageView.image =  #imageLiteral(resourceName: "placeholder") }
         self.timeLabel.text = (material.publishDate?.convertToDate())?.timeAgo()
-        self.viewsImageView.image = material.noOfViews! > 5000 ? UIImage(
-            named: "ic_views_icon_hot"): UIImage(
-                named: "ic_views_icon")
         self.viewsLabel.text = material.noOfViews?.localizedNumber()
+        guard let noOfViews = material.noOfViews else { return }
+        self.viewsImageView.image = noOfViews > 5000 ? #imageLiteral(resourceName: "ic_views_icon_hot") : #imageLiteral(resourceName: "ic_views_icon")
     }
 }

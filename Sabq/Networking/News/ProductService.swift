@@ -17,7 +17,10 @@ enum  NewsService {
 
 extension NewsService: TargetType {
     var baseURL: URL {
-        return URL(string: NetworkManager.shared.networkConfig.baseUrl)!
+        guard let url = URL(string: NetworkManager.shared.networkConfig.baseUrl) else {
+            fatalError("Unconstructable URL: \(NetworkManager.shared.networkConfig.baseUrl)")
+        }
+        return url
     }
     
     var path: String {

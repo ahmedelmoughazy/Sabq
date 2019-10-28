@@ -12,8 +12,8 @@ protocol SearchPresenterProtocol: BasePresenterProtocol {
     
 }
 
-protocol SearchViewProtocol:BaseViewProtocol {
+protocol SearchViewProtocol: BaseViewProtocol {
 }
 
-protocol SearchModelProtocol:BaseModelProtocol {
+protocol SearchModelProtocol: BaseModelProtocol {
 }

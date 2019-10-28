@@ -34,26 +34,30 @@ extension VideoTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width/3, height: collectionView.frame.height)
+        return CGSize(width: UIScreen.main.bounds.width / 3, height: collectionView.frame.height)
     }
 }
 
 extension VideoTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        NewsRouter.moveToDetails(material: videos![indexPath.row])
+        guard let videoMaterial = videos?[indexPath.row] else { return }
+        NewsRouter.moveToDetails(material: videoMaterial)
     }
 }
 
 extension VideoTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videos!.count
+            guard let videosCount = videos?.count else { return 0 }
+            return videosCount
     }
+        
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: VideoCollectionViewCell.identifier,
-            for: indexPath) as? VideoCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureCell(comic: videos![indexPath.row])
+            for: indexPath) as? VideoCollectionViewCell,
+            let videoMaterial = videos?[indexPath.row] else { return UICollectionViewCell() }
+        cell.configureCell(comic: videoMaterial)
         return cell
     }
 }

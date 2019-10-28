@@ -12,10 +12,10 @@ protocol SectionsPresenterProtocol: BasePresenterProtocol {
     
 }
 
-protocol SectionsViewProtocol:BaseViewProtocol {
+protocol SectionsViewProtocol: BaseViewProtocol {
 
 }
 
-protocol SectionsModelProtocol:BaseModelProtocol {
+protocol SectionsModelProtocol: BaseModelProtocol {
 
 }

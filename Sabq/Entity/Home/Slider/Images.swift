@@ -1,8 +1,8 @@
 import Foundation
 
-struct Images : Codable {
-	let url : String?
-	let caption : String?
+struct Images: Codable {
+	let url: String?
+	let caption: String?
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)

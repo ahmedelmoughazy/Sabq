@@ -20,6 +20,7 @@ class DetailsPresenter: DetailsPresenterProtocol {
     
     func loadDetailsData() {
         let data = detailsModel.getData()
-        detailsView.renderViewWithObject(material: data)
+        guard let material = data else { return }
+        detailsView.renderViewWithObject(material: material)
     }
 }

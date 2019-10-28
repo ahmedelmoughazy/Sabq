@@ -19,7 +19,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    static var nib:UINib {
+    static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
     
@@ -29,8 +29,10 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     
     func configureCell(material: Material) {
         self.autherImageView.layer.cornerRadius = self.autherImageView.frame.size.width / 2.0
-        self.autherImageView.sd_setImage(with:
-            URL(string: material.authorImg!), placeholderImage: UIImage(named: "placeholder"))
+        if let imageURL = material.coverPhoto {
+            self.autherImageView.sd_setImage(with: URL(string: imageURL),
+                                             placeholderImage: #imageLiteral(resourceName: "placeholder") )
+        } else { autherImageView.image =  #imageLiteral(resourceName: "placeholder") }
         self.titleLabel.text = material.title
         self.autherNameLabel.text = material.authorName
     }

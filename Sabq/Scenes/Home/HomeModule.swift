@@ -17,20 +17,20 @@ class HomeModule {
         
         homeView.setPresenter(presenter: presenter)
         
-        var notification = UIImage(named: "ic_notification_icon")
-        var user = UIImage(named: "img_user")
-        notification = notification?.withRenderingMode(.alwaysOriginal)
-        user = user?.withRenderingMode(.alwaysOriginal)
+        var notification = #imageLiteral(resourceName: "ic_notification_icon")
+        var user = #imageLiteral(resourceName: "img_user")
+        notification = notification.withRenderingMode(.alwaysOriginal)
+        user = user.withRenderingMode(.alwaysOriginal)
         
         homeView.navigationItem.leftBarButtonItem = UIBarButtonItem(image: notification,
-                                                                    style:.plain,
+                                                                    style: .plain,
                                                                     target: nil,
                                                                     action: nil)
         homeView.navigationItem.rightBarButtonItem = UIBarButtonItem(image: user,
-                                                                     style:.plain,
+                                                                     style: .plain,
                                                                      target: nil,
                                                                      action: nil)
-        homeView.navigationItem.titleView = UIImageView(image: UIImage(named: "img_logo"))
+        homeView.navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "img_logo") )
         
         return homeView
         

@@ -18,7 +18,8 @@ class HomePresenter: HomePresenterProtocol {
             do {
                 let sliders = try (result.get() as? SliderResponse)?.slider
                 let materials = try (result.get() as? SliderResponse)?.materials
-                self.homeView.renderViewWithObjects(sliders: sliders!, materials: materials!)
+                guard let slidersList = sliders, let materialsList = materials else { return }
+                self.homeView.renderViewWithObjects(sliders: slidersList, materials: materialsList)
             } catch {
                 print(error)
             }
@@ -29,7 +30,7 @@ class HomePresenter: HomePresenterProtocol {
         homeModel.getImages {(result) in
             do {
                 let comics = try (result.get() as? ImageResponse)?.comics
-                guard let results = comics else {return}
+                guard let results = comics else { return }
                 self.homeView.renderViewWithObjects(images: results)
             } catch {
                 print(error)
@@ -41,7 +42,7 @@ class HomePresenter: HomePresenterProtocol {
         homeModel.getVideos {(result) in
             do {
                 let comics = try (result.get() as? VideoResponse)?.comics
-                guard let results = comics else {return}
+                guard let results = comics else { return }
                 self.homeView.renderViewWithObjects(videos: results)
             } catch {
                 print(error)
@@ -52,7 +53,7 @@ class HomePresenter: HomePresenterProtocol {
         homeModel.getArticles {(result) in
             do {
                 let materials = try (result.get() as? ArticleResponse)?.materials
-                guard let results = materials else {return}
+                guard let results = materials else { return }
                 self.homeView.renderViewWithObjects(articles: results)
             } catch {
                 print(error)

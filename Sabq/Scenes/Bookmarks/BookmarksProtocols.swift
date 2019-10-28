@@ -12,9 +12,9 @@ protocol BookmarksPresenterProtocol: BasePresenterProtocol {
     
 }
 
-protocol BookmarksViewProtocol:BaseViewProtocol {
+protocol BookmarksViewProtocol: BaseViewProtocol {
 }
 
-protocol BookmarksModelProtocol:BaseModelProtocol {
+protocol BookmarksModelProtocol: BaseModelProtocol {
 
 }

@@ -16,7 +16,7 @@ class DetailsModel: DetailsModelProtocol {
         self.material = material
     }
     
-    func getData() -> Material {
-        return material!
+    func getData() -> Material? {
+        return material
     }
 }

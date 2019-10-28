@@ -15,14 +15,14 @@ protocol HomePresenterProtocol: BasePresenterProtocol {
     func loadArticles()
 }
 
-protocol HomeViewProtocol:BaseViewProtocol {
+protocol HomeViewProtocol: BaseViewProtocol {
     func renderViewWithObjects(sliders: [Material], materials: [Material])
     func renderViewWithObjects(images: [Material])
     func renderViewWithObjects(videos: [Material])
     func renderViewWithObjects(articles: [Material])
 }
 
-protocol HomeModelProtocol:BaseModelProtocol {
+protocol HomeModelProtocol: BaseModelProtocol {
 
     func getSliders(compelation: @escaping (Result<Any, Error>) -> Void)
     

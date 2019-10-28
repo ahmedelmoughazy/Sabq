@@ -13,6 +13,7 @@ extension Int {
         let formater = NumberFormatter()
         formater.numberStyle = .none
         formater.locale = NSLocale.current
-        return formater.string(from: NSNumber(value: self))!
+        guard let localizedNumber = formater.string(from: NSNumber(value: self)) else { return "" }
+        return localizedNumber
     }
 }

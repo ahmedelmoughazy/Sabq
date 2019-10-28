@@ -12,10 +12,10 @@ protocol CommonPresenterProtocol: BasePresenterProtocol {
     
 }
 
-protocol CommonViewProtocol:BaseViewProtocol {
+protocol CommonViewProtocol: BaseViewProtocol {
 
 }
 
-protocol CommonModelProtocol:BaseModelProtocol {
+protocol CommonModelProtocol: BaseModelProtocol {
 
 }

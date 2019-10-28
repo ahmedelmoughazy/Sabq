@@ -32,7 +32,7 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal {
     func setTableView(newsTable: UITableView) {
         self.tableView = newsTable
     }
-    func addSlidersAndMaterials(sliders: [Material],materials: [Material]) {
+    func addSlidersAndMaterials(sliders: [Material], materials: [Material]) {
         if list == nil {
             list = []
         }
@@ -81,7 +81,7 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal {
     func update(item: HomeListItem) {
     }
     func getItem(at index: Int) -> Material? {
-        if let item = list![index] as? MaterialItem {
+        if let item = list?[index] as? MaterialItem {
             //configure the cell
             return item.material
         } else {
@@ -92,7 +92,7 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal {
         return list?.count ?? 0
     }
     func isLastIndex(index: IndexPath) -> Bool {
-        return index.row == count()-1
+        return index.row == count() - 1
     }
     func clear(reload: Bool) {
         switch reload {
@@ -120,7 +120,7 @@ extension HomeAdapter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.section
-        let item = list![indexPath.row]
+        guard let item = list?[indexPath.row] else { return UITableViewCell() }
         switch section {
         case 0:
             if let cell = tableView.dequeueReusableCell(

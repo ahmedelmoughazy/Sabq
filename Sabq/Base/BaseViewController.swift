@@ -9,9 +9,9 @@
 import UIKit
 import Foundation
 
-class BaseViewController<Presenter:BasePresenterProtocol>: UIViewController, BaseViewProtocol {
+class BaseViewController<Presenter: BasePresenterProtocol>: UIViewController, BaseViewProtocol {
     
-    var presenter:Presenter!
+    var presenter: Presenter!
     
     public func setPresenter (presenter: Presenter) {
         self.presenter = presenter

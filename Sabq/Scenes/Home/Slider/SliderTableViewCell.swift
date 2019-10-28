@@ -42,16 +42,10 @@ class SliderTableViewCell: UITableViewCell {
     func setupPageControl() {
         pageControl.numberOfPages = sliders.count
         pageControl.hidesForSinglePage = true
-        pageControl.pageIndicatorTintColor = UIColor(red: 142.0/255.0,
-                                                     green: 142.0/255.0,
-                                                     blue: 147.0/255.0,
-                                                     alpha: 1.0)
-        pageControl.currentPageIndicatorTintColor = UIColor(red: 74.0/255.0,
-                                                            green: 144.0/255.0,
-                                                            blue: 226.0/255.0,
-                                                            alpha :1.0)
+        pageControl.pageIndicatorTintColor = #colorLiteral(red: 0.5568627451, green: 0.5568627451, blue: 0.5764705882, alpha: 1)
+        pageControl.currentPageIndicatorTintColor = #colorLiteral(red: 0.2901960784, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
         let pageControlSize = pageControl.sizeThatFits(self.bounds.size)
-        pageControl.frame = CGRect(x: 0, y: self.bounds.height/2 - pageControlSize.height,
+        pageControl.frame = CGRect(x: 0, y: self.bounds.height / 2 - pageControlSize.height,
                                    width: self.bounds.width, height: pageControlSize.height)
         self.addSubview(pageControl)
     }

@@ -87,11 +87,11 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return UIScreen.main.bounds.height/2
+            return UIScreen.main.bounds.height / 2
         default:
             switch indexPath.row {
-            case 5,11,17:
-                return UIScreen.main.bounds.height/2.9
+            case 5, 11, 17:
+                return UIScreen.main.bounds.height / 2.9
             default:
                 return 130
             }
