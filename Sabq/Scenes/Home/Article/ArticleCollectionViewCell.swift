@@ -29,7 +29,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     
     func configureCell(material: Material) {
         self.autherImageView.layer.cornerRadius = self.autherImageView.frame.size.width / 2.0
-        if let imageURL = material.coverPhoto {
+        if let imageURL = material.authorImg {
             self.autherImageView.sd_setImage(with: URL(string: imageURL),
                                              placeholderImage: #imageLiteral(resourceName: "placeholder") )
         } else { autherImageView.image =  #imageLiteral(resourceName: "placeholder") }
