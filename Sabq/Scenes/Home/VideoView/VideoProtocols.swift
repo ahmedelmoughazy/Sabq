@@ -9,13 +9,13 @@
 import Foundation
 
 protocol VideoPresenterProtocol: BasePresenterProtocol {
-    
+    func loadVideoData()
 }
 
 protocol VideoViewProtocol: BaseViewProtocol {
-
+    func renderViewWithObject(material: Material)
 }
 
 protocol VideoModelProtocol: BaseModelProtocol {
-
+    func getVideo() -> Material?
 }

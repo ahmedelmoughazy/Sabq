@@ -18,4 +18,9 @@ class VideoPresenter: VideoPresenterProtocol {
         videoModel = model
     }
 
+    func loadVideoData() {
+        let data = videoModel.getVideo()
+        guard let material = data else { return }
+        videoView.renderViewWithObject(material: material)
+    }
 }

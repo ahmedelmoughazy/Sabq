@@ -41,7 +41,7 @@ extension VideoTableViewCell: UICollectionViewDelegateFlowLayout {
 extension VideoTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let videoMaterial = videos?[indexPath.row] else { return }
-        NewsRouter.moveToDetails(material: videoMaterial)
+        NewsRouter.moveToVideoView(material: videoMaterial)
     }
 }
 

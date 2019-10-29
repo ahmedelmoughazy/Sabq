@@ -66,6 +66,11 @@ class NewsRouter {
         homeNavigationController?.pushViewController(detailsViewController, animated: true)
     }
     
+    class func moveToVideoView(material: Material) {
+        let videoViewController = VideoModule.getVideoView(material: material)
+        tabbarController?.tabBar.isHidden = true
+        homeNavigationController?.pushViewController(videoViewController, animated: true)
+    }
 //    class func setRTL() {
 //        UIView.appearance().semanticContentAttribute = .forceRightToLeft
 //        UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft

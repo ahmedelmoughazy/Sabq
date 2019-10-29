@@ -9,5 +9,14 @@
 import Foundation
 
 class VideoModel: VideoModelProtocol {
-
+    
+    private var material: Material?
+    
+    init(material: Material) {
+        self.material = material
+    }
+    
+    func getVideo() -> Material? {
+        return material
+    }
 }

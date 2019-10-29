@@ -33,6 +33,6 @@ class DetailsViewController: BaseViewController<DetailsPresenter>, DetailsViewPr
 
     func renderViewWithObject(material: Material) {
         descriptionLabel.isHidden = true
-        print("\(material)")
+        
     }
 }
