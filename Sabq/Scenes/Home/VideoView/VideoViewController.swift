@@ -22,6 +22,10 @@ class VideoViewController: BaseViewController<VideoPresenter>, VideoViewProtocol
     }
 
     func renderViewWithObject(material: Material) {
+        viewsButton.setTitle(material.noOfViews?.localizedNumber(), for: .normal)
+        likesButton.setTitle(material.noOfLikes?.localizedNumber(), for: .normal)
+        commentsButton.setTitle(material.noOfComments?.localizedNumber(), for: .normal)
+        
         viewsButton.titleLabel?.text = "\(material.noOfViews ?? 0)"
         likesButton.titleLabel?.text = "\(material.noOfLikes ?? 0)"
         commentsButton.titleLabel?.text = "\(material.noOfComments ?? 0)"
