@@ -91,11 +91,20 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_play_1" translatesAutoresizingMaskIntoConstraints="NO" id="amM-fF-dFw">
+                        <rect key="frame" x="20" y="20" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="33D-2S-qQ0"/>
+                            <constraint firstAttribute="width" constant="30" id="nzg-N6-HKw"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="amM-fF-dFw" firstAttribute="leading" secondItem="Opt-Sf-rgN" secondAttribute="leading" constant="5" id="2Kh-5t-JXA"/>
                     <constraint firstItem="oEk-xp-Fja" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Aih-oL-x8P"/>
                     <constraint firstItem="oEk-xp-Fja" firstAttribute="leading" secondItem="Opt-Sf-rgN" secondAttribute="trailing" constant="20" id="AuN-h4-cXo"/>
                     <constraint firstAttribute="trailing" secondItem="oEk-xp-Fja" secondAttribute="trailing" constant="40" id="FS1-lE-gHh"/>
+                    <constraint firstItem="amM-fF-dFw" firstAttribute="top" secondItem="Opt-Sf-rgN" secondAttribute="top" constant="5" id="HPC-2i-bwt"/>
                     <constraint firstItem="vwP-AM-qaY" firstAttribute="leading" secondItem="mtL-fe-eIf" secondAttribute="trailing" constant="10" id="Sbs-uf-kcc"/>
                     <constraint firstAttribute="bottom" secondItem="mtL-fe-eIf" secondAttribute="bottom" constant="15" id="StZ-sc-34C"/>
                     <constraint firstItem="Opt-Sf-rgN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="WMd-3I-cwK"/>
@@ -120,6 +129,7 @@
                 <outlet property="newsImageView" destination="Opt-Sf-rgN" id="r88-eK-B6v"/>
                 <outlet property="timeLabel" destination="vwP-AM-qaY" id="4Mr-e1-w4T"/>
                 <outlet property="titleLabel" destination="oEk-xp-Fja" id="grM-hJ-QfH"/>
+                <outlet property="videoNewsImageView" destination="amM-fF-dFw" id="VpT-KR-0Il"/>
                 <outlet property="viewsImageView" destination="2pr-YC-kdn" id="oNI-XM-3lC"/>
                 <outlet property="viewsLabel" destination="omv-yS-qZt" id="bnR-1Z-z0e"/>
             </connections>
@@ -128,6 +138,7 @@
     </objects>
     <resources>
         <image name="ic_bookmark" width="19" height="24"/>
+        <image name="ic_play_1" width="30" height="30"/>
         <image name="ic_time" width="15" height="15"/>
         <image name="ic_views_icon" width="11" height="15"/>
     </resources>

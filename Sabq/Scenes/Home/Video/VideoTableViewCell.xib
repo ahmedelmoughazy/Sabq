@@ -27,13 +27,39 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEz-tK-MMf">
+                        <rect key="frame" x="0.0" y="23" width="376" height="2"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="v3s-0O-hP8"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الفيديوهات" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZN-ei-jsx">
+                        <rect key="frame" x="298.5" y="5" width="67.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المزيد" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fd-fw-NtA">
+                        <rect key="frame" x="10" y="2" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                 <constraints>
+                    <constraint firstItem="nEz-tK-MMf" firstAttribute="top" secondItem="1fd-fw-NtA" secondAttribute="bottom" id="AjD-HF-kuC"/>
+                    <constraint firstItem="nEz-tK-MMf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="C2s-BE-Pss"/>
+                    <constraint firstAttribute="trailing" secondItem="nEz-tK-MMf" secondAttribute="trailing" id="CF8-gl-JTx"/>
+                    <constraint firstAttribute="trailing" secondItem="PZN-ei-jsx" secondAttribute="trailing" constant="10" id="Gd8-tg-y6P"/>
+                    <constraint firstItem="nEz-tK-MMf" firstAttribute="top" secondItem="PZN-ei-jsx" secondAttribute="bottom" id="Iaj-Bv-Df9"/>
                     <constraint firstAttribute="bottom" secondItem="5jq-KO-j54" secondAttribute="bottom" constant="30" id="IsR-pI-xKS"/>
                     <constraint firstItem="5jq-KO-j54" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QVA-Om-DvZ"/>
                     <constraint firstItem="5jq-KO-j54" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="40" id="frO-x2-3yr"/>
+                    <constraint firstItem="5jq-KO-j54" firstAttribute="top" secondItem="nEz-tK-MMf" secondAttribute="bottom" constant="15" id="hne-4j-ww5"/>
                     <constraint firstAttribute="trailing" secondItem="5jq-KO-j54" secondAttribute="trailing" id="vv6-wj-G54"/>
+                    <constraint firstItem="1fd-fw-NtA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="yPo-Mg-3Am"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

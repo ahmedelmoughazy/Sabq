@@ -17,6 +17,7 @@ class MaterialTableViewCell: UITableViewCell {
     @IBOutlet weak private var timeLabel: UILabel!
     @IBOutlet weak private var viewsLabel: UILabel!
     @IBOutlet weak private var viewsImageView: UIImageView!
+    @IBOutlet weak private var videoNewsImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +40,10 @@ class MaterialTableViewCell: UITableViewCell {
         } else { newsImageView.image =  #imageLiteral(resourceName: "placeholder") }
         self.timeLabel.text = (material.publishDate?.convertToDate())?.timeAgo()
         self.viewsLabel.text = material.noOfViews?.localizedNumber()
+        
+        guard let noOfVideos = material.videosCount else { return }
+        self.videoNewsImageView.isHidden = noOfVideos > 0 ? false : true
+        
         guard let noOfViews = material.noOfViews else { return }
         self.viewsImageView.image = noOfViews > 5000 ? #imageLiteral(resourceName: "ic_views_icon_hot") : #imageLiteral(resourceName: "ic_views_icon")
     }
