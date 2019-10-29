@@ -33,6 +33,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
                                            placeholderImage: #imageLiteral(resourceName: "placeholder") )
         } else { newsImageView.image =  #imageLiteral(resourceName: "placeholder") }
         self.titleLabel.text = comic.title
-        self.timeLabel.text = (comic.publishDate?.convertToDate())?.timeAgo()
+        self.timeLabel.text = (comic.publishDate?.convertToLongDate())
     }
 }

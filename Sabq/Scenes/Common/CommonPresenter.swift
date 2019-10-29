@@ -10,12 +10,12 @@ import Foundation
 
 class CommonPresenter: CommonPresenterProtocol {
     
-    private var homeView: CommonViewProtocol
-    private var homeModel: CommonModelProtocol
+    private var commonView: CommonViewProtocol
+    private var commonModel: CommonModelProtocol
 
     required init(view: CommonViewProtocol, model: CommonModelProtocol) {
-        homeView = view
-        homeModel = model
+        commonView = view
+        commonModel = model
     }
 
 }

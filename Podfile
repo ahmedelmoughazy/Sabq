@@ -10,4 +10,5 @@ target 'Sabq' do
   pod 'LocalizedTimeAgo'
   pod 'LoadingPlaceholderView', :inhibit_warnings => true
   pod 'MaterialComponents/PageControl'
+  pod "YoutubePlayer-in-WKWebView"
 end
