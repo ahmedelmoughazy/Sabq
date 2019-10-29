@@ -11,11 +11,16 @@ import UIKit
 class ArticleTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var articlesCollectionView: UICollectionView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var moreLabel: UILabel!
     private var articles: [Material]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.titleLabel.text = NSLocalizedString("Articles", comment: "section title")
+        self.moreLabel.text = NSLocalizedString("More", comment: "section title")
+        
         articlesCollectionView.delegate = self
         articlesCollectionView.dataSource = self
         articlesCollectionView.register(ArticleCollectionViewCell.nib,

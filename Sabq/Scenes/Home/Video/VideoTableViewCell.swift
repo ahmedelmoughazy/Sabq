@@ -10,10 +10,16 @@ import UIKit
 
 class VideoTableViewCell: UITableViewCell {
     @IBOutlet private weak var videosCollectionView: UICollectionView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var moreLabel: UILabel!
     private var videos: [Material]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.titleLabel.text = NSLocalizedString("Videos", comment: "section title")
+        self.moreLabel.text = NSLocalizedString("More", comment: "section title")
+        
         videosCollectionView.delegate = self
         videosCollectionView.dataSource = self
         videosCollectionView.register(VideoCollectionViewCell.nib,

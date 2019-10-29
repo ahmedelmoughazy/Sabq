@@ -34,7 +34,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         } else { newsImageView.image =  #imageLiteral(resourceName: "placeholder") }
         self.titleLabel.text = comic.title
         self.timeLabel.text = (comic.publishDate?.convertToLongDate())
-        setGradientBackground()
+  //      setGradientBackground()
     }
     
     func setGradientBackground() {
@@ -43,7 +43,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorTop, colorBottom]
-        gradientLayer.locations = [0.0]
+        gradientLayer.locations = [0.0, 1.0]
         gradientLayer.frame = self.bounds
         newsImageView.layer.addSublayer(gradientLayer)
     }
