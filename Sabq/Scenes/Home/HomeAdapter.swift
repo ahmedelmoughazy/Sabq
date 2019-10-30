@@ -23,15 +23,17 @@ protocol HomeListItem {
 class HomeAdapter: NSObject, BaseListAdapterProtocal {
     typealias DataType = HomeListItem
     internal var list: [HomeListItem]?
-    var slider = [SliderListItem]()
+    private var slider = [SliderListItem]()
     
     var tableView: UITableView?
     var reloadData: (() -> Void)?
     var loadMoreData:(() -> Void)?
     var showEmptyState: ((Bool) -> Void)?
+    
     func setTableView(newsTable: UITableView) {
         self.tableView = newsTable
     }
+    
     func addSlidersAndMaterials(sliders: [Material], materials: [Material]) {
         if list == nil {
             list = []
@@ -48,6 +50,7 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal {
         }
         reloadData?()
     }
+    
     func addVideos(items: [Material]) {
         if !items.isEmpty {
             let materialsItem = VideosListItem(videos: items)
@@ -55,6 +58,7 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal {
         }
         reloadData?()
     }
+    
     func addImages(items: [Material]) {
         if !items.isEmpty {
             let materialsItem = ImagesListItem(images: items)
@@ -62,6 +66,7 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal {
         }
         reloadData?()
     }
+    
     func addArticles(items: [Material]) {
         if !items.isEmpty {
             let materialsItem = ArticlesListItem(articles: items)
@@ -69,8 +74,10 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal {
         }
         reloadData?()
     }
+    
     func add(item: HomeListItem) {
     }
+    
     func add(items: [HomeListItem]) {
         if list == nil {
             list = []
@@ -78,8 +85,10 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal {
         list?.append(contentsOf: items)
         reloadData?()
     }
+    
     func update(item: HomeListItem) {
     }
+    
     func getItem(at index: Int) -> Material? {
         if let item = list?[index] as? MaterialItem {
             //configure the cell
@@ -88,16 +97,20 @@ class HomeAdapter: NSObject, BaseListAdapterProtocal {
             return nil
         }
     }
+    
     func count() -> Int {
         return list?.count ?? 0
     }
+    
     func isLastIndex(index: IndexPath) -> Bool {
         return index.row == count() - 1
     }
+    
     func clear(reload: Bool) {
         switch reload {
         case true:
             list?.removeAll()
+            slider.removeAll()
             reloadData?()
         default:
             list?.removeAll()

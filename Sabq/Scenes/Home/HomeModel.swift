@@ -16,7 +16,8 @@ class HomeModel: HomeModelProtocol {
                 let results = try result.get()
                 compelation(.success(results))
             } catch {
-                print(error)
+ //               print(error)
+                compelation(.failure(error))
             }
         }
     }

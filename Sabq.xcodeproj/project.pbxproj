@@ -61,6 +61,7 @@
 		34F0849C235C918E00224187 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F0849B235C918E00224187 /* HomePresenter.swift */; };
 		34F0849E235C922C00224187 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F0849D235C922B00224187 /* HomeModel.swift */; };
 		34F084A0235C92D400224187 /* HomeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F0849F235C92D400224187 /* HomeAdapter.swift */; };
+		34FF5D3323699D9100D66222 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF5D3223699D9100D66222 /* UITableView+Extensions.swift */; };
 		6B1D96C62360DC3900614704 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D96C42360DC3900614704 /* CommonViewController.swift */; };
 		6B1D96C72360DC3900614704 /* CommonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1D96C52360DC3900614704 /* CommonViewController.xib */; };
 		6B1D96CA2360DC4C00614704 /* SectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D96C82360DC4C00614704 /* SectionsViewController.swift */; };
@@ -174,6 +175,7 @@
 		34F0849B235C918E00224187 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		34F0849D235C922B00224187 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		34F0849F235C92D400224187 /* HomeAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdapter.swift; sourceTree = "<group>"; };
+		34FF5D3223699D9100D66222 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		6B1D96C42360DC3900614704 /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		6B1D96C52360DC3900614704 /* CommonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonViewController.xib; sourceTree = "<group>"; };
 		6B1D96C82360DC4C00614704 /* SectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsViewController.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				347AA502235853B30008AA2D /* Info.plist */,
 				344F5837235DFD2E00206AC1 /* String+Extensions.swift */,
 				6B7668A1236383DC008812DC /* Int+Extensions.swift */,
+				34FF5D3223699D9100D66222 /* UITableView+Extensions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -784,6 +787,7 @@
 				34F0849E235C922C00224187 /* HomeModel.swift in Sources */,
 				6B1D96E12360DD9500614704 /* BookmarksModule.swift in Sources */,
 				6B1D96EE2360DDAF00614704 /* SectionsModule.swift in Sources */,
+				34FF5D3323699D9100D66222 /* UITableView+Extensions.swift in Sources */,
 				6B34ABC72359E4E500C81E40 /* BaseViewProtocol.swift in Sources */,
 				6B1D96DF2360DD9500614704 /* BookmarksModel.swift in Sources */,
 				6B34ABC42359E4E500C81E40 /* UIViewController+Extentions.swift in Sources */,

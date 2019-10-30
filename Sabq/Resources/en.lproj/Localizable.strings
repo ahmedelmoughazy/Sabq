@@ -14,7 +14,7 @@
 "Videos" = "Videos";
 "Articles" = "Articles";
 "More" = "More";
-//"" = "";
-//"" = "";
-//"" = "";
+"No Internet Title" = "No Or Slow Internet Connection";
+"No Internet Message" = "please check your internet connection and try again";
+"Pull to refresh" = "Pull to refresh";
 //"" = "";

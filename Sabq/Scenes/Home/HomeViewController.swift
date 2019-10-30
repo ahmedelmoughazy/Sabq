@@ -48,6 +48,12 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         homeTableView.register(SliderTableViewCell.nib,
                                forCellReuseIdentifier: SliderTableViewCell.identifier)
         
+        homeTableView.refreshControl = UIRefreshControl()
+        guard let refreshControl = homeTableView.refreshControl else { return }
+        refreshControl.attributedTitle = NSAttributedString(string: NSLocalizedString("Pull to refresh",
+                                                                                      comment: "Pull to refresh"))
+        refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        
         adapter.setTableView(newsTable: homeTableView)
         adapter.reloadData = reloadActorsData
         setupLoadingPlaceholderView()
@@ -55,9 +61,18 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         presenter.loadHome()
     }
 
+    @objc func refresh() {
+        adapter.clear(reload: true)
+        homeTableView.separatorStyle = .none
+        setupLoadingPlaceholderView()
+        loadingPlaceholderView.cover(view)
+        presenter.loadHome()
+    }
+    
     func reloadActorsData() {
         homeTableView.separatorStyle = .singleLine
         homeTableView.reloadData()
+        homeTableView.refreshControl?.endRefreshing()
     }
     
     func renderViewWithObjects(sliders: [Material], materials: [Material]) {
@@ -81,6 +96,12 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         adapter.addArticles(items: articles)
     }
 
+    func renderEmptyView() {
+        loadingPlaceholderView.uncover()
+        homeTableView.setEmptyView(title: NSLocalizedString("No Internet Title", comment: "No Internet Title"),
+                                   message: NSLocalizedString("No Internet Message", comment: "No Internet Message"),
+                                   messageImage: #imageLiteral(resourceName: "no-internet"))
+    }
 }
 
 extension HomeViewController: UITableViewDelegate {

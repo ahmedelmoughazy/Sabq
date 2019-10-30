@@ -20,6 +20,7 @@ protocol HomeViewProtocol: BaseViewProtocol {
     func renderViewWithObjects(images: [Material])
     func renderViewWithObjects(videos: [Material])
     func renderViewWithObjects(articles: [Material])
+    func renderEmptyView()
 }
 
 protocol HomeModelProtocol: BaseModelProtocol {

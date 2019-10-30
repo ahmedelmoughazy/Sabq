@@ -22,6 +22,7 @@ class HomePresenter: HomePresenterProtocol {
                 self.homeView.renderViewWithObjects(sliders: slidersList, materials: materialsList)
             } catch {
                 print(error)
+                self.homeView.renderEmptyView()
             }
         }
     }

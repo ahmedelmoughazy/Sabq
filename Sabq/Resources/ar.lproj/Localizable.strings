@@ -14,3 +14,6 @@
 "Articles" = "المقالات";
 "Videos" = "فيديوهات";
 "More" = "المزيد";
+"No Internet Title" = "عفوا الاتصال بطئ او لا يوجد اتصال";
+"No Internet Message" = "افحص الاتصال وحاول مره اخرى";
+"Pull to refresh" = "اسحب للتحديث";
