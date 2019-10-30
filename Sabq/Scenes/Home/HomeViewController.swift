@@ -28,6 +28,7 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
     private func setupLoadingPlaceholderView() {
         loadingPlaceholderView.gradientColor = .white
         loadingPlaceholderView.backgroundColor = .white
+        loadingPlaceholderView.cover(view)
     }
     
     override func viewDidLoad() {
@@ -50,14 +51,14 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         
         homeTableView.refreshControl = UIRefreshControl()
         guard let refreshControl = homeTableView.refreshControl else { return }
+        refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: NSLocalizedString("Pull to refresh",
                                                                                       comment: "Pull to refresh"))
-        refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         
         adapter.setTableView(newsTable: homeTableView)
         adapter.reloadData = reloadActorsData
+        
         setupLoadingPlaceholderView()
-        loadingPlaceholderView.cover(view)
         presenter.loadHome()
     }
 
@@ -65,7 +66,6 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         adapter.clear(reload: true)
         homeTableView.separatorStyle = .none
         setupLoadingPlaceholderView()
-        loadingPlaceholderView.cover(view)
         presenter.loadHome()
     }
     
@@ -77,7 +77,6 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
     
     func renderViewWithObjects(sliders: [Material], materials: [Material]) {
         adapter.addSlidersAndMaterials(sliders: sliders, materials: materials)
-        homeTableView.reloadData()
         loadingPlaceholderView.uncover()
         presenter.loadVideos()
     }

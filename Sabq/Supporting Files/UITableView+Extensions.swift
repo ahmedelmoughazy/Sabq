@@ -55,19 +55,19 @@ extension UITableView {
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
         
-//        UIView.animate(withDuration: 1, animations: {
-//            
-//            messageImageView.transform = CGAffineTransform(rotationAngle: .pi / 10)
-//        }, completion: { (finish) in
-//            UIView.animate(withDuration: 1, animations: {
-//                messageImageView.transform = CGAffineTransform(rotationAngle: -1 * (.pi / 10))
-//            }, completion: { (finishh) in
-//                UIView.animate(withDuration: 1, animations: {
-//                    messageImageView.transform = CGAffineTransform.identity
-//                })
-//            })
-//            
-//        })
+        UIView.animate(withDuration: 1, animations: {
+            
+            messageImageView.transform = CGAffineTransform(rotationAngle: .pi / 10)
+        }, completion: { (finish) in
+            UIView.animate(withDuration: 1, animations: {
+                messageImageView.transform = CGAffineTransform(rotationAngle: -1 * (.pi / 10))
+            }, completion: { (finishh) in
+                UIView.animate(withDuration: 1, animations: {
+                    messageImageView.transform = CGAffineTransform.identity
+                })
+            })
+            
+        })
         
         self.backgroundView = emptyView
         self.separatorStyle = .none
