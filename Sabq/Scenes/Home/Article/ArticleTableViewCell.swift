@@ -58,8 +58,8 @@ extension ArticleTableViewCell: UICollectionViewDelegate {
 
 extension ArticleTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let articlesCount = articles?.count else { return 0 }
-        return articlesCount
+        guard let _ = articles?.count else { return 0 }
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView,

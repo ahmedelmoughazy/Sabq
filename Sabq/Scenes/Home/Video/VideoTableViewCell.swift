@@ -53,8 +53,8 @@ extension VideoTableViewCell: UICollectionViewDelegate {
 
 extension VideoTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            guard let videosCount = videos?.count else { return 0 }
-            return videosCount
+            guard let _ = videos?.count else { return 0 }
+            return 0
     }
         
     func collectionView(_ collectionView: UICollectionView,
