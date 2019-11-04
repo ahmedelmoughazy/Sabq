@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C621156C06D82AE3C90FC01 /* Pods_Sabq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C59002BF082B3CFD946615F /* Pods_Sabq.framework */; };
+		3407F0C5237039A5004F7581 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3407F0C4237039A5004F7581 /* UIColor+Extensions.swift */; };
+		3407F0C823703C4D004F7581 /* 4_28.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3407F0C623703C3A004F7581 /* 4_28.otf */; };
 		341E23BA236848EA000DF1CD /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341E23B4236848EA000DF1CD /* VideoViewController.xib */; };
 		341E23BD236848EA000DF1CD /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341E23B7236848EA000DF1CD /* VideoViewController.swift */; };
 		341E23C223684A38000DF1CD /* VideoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341E23BE23684A38000DF1CD /* VideoModule.swift */; };
@@ -120,6 +122,8 @@
 
 /* Begin PBXFileReference section */
 		1C59002BF082B3CFD946615F /* Pods_Sabq.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sabq.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3407F0C4237039A5004F7581 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		3407F0C623703C3A004F7581 /* 4_28.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 4_28.otf; sourceTree = "<group>"; };
 		341E23B4236848EA000DF1CD /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		341E23B7236848EA000DF1CD /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		341E23BE23684A38000DF1CD /* VideoModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModule.swift; sourceTree = "<group>"; };
@@ -326,6 +330,7 @@
 		347AA5272358715D0008AA2D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3407F0C623703C3A004F7581 /* 4_28.otf */,
 				347AA4FD235853B30008AA2D /* Assets.xcassets */,
 				6B76689F236350A0008812DC /* Localizable.strings */,
 			);
@@ -356,6 +361,7 @@
 				344F5837235DFD2E00206AC1 /* String+Extensions.swift */,
 				6B7668A1236383DC008812DC /* Int+Extensions.swift */,
 				34FF5D3223699D9100D66222 /* UITableView+Extensions.swift */,
+				3407F0C4237039A5004F7581 /* UIColor+Extensions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -667,6 +673,7 @@
 			files = (
 				344F5836235DDB0700206AC1 /* ArticleTableViewCell.xib in Resources */,
 				6B1D96C72360DC3900614704 /* CommonViewController.xib in Resources */,
+				3407F0C823703C4D004F7581 /* 4_28.otf in Resources */,
 				6B1D96CB2360DC4C00614704 /* SectionsViewController.xib in Resources */,
 				3446928223605E7A0095CAC9 /* ArticleCollectionViewCell.xib in Resources */,
 				6B1D96D92360DCBD00614704 /* BookmarksViewController.xib in Resources */,
@@ -815,6 +822,7 @@
 				6B1D96D42360DCA600614704 /* SearchViewController.swift in Sources */,
 				3461F58E23622995006072F6 /* DetailsModule.swift in Sources */,
 				341E23C223684A38000DF1CD /* VideoModule.swift in Sources */,
+				3407F0C5237039A5004F7581 /* UIColor+Extensions.swift in Sources */,
 				344F5835235DDB0700206AC1 /* ArticleTableViewCell.swift in Sources */,
 				34F0849C235C918E00224187 /* HomePresenter.swift in Sources */,
 				3461F58623622786006072F6 /* DetailsViewController.swift in Sources */,

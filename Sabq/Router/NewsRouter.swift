@@ -48,7 +48,6 @@ class NewsRouter {
         
         self.homeNavigationController = UINavigationController(rootViewController: homeViewController)
         guard let homeNavigationController = self.homeNavigationController else { return }
-        
         //setup tabbar
         self.tabbarController = UITabBarController()
         self.tabbarController?.viewControllers = [ homeNavigationController,
@@ -56,7 +55,9 @@ class NewsRouter {
                                                    sectionsViewController,
                                                    searchViewController,
                                                    bookmarksViewController]
-
+        self.tabbarController?.tabBar.barTintColor = UIColor(named: "color-background")
+        self.tabbarController?.tabBar.isTranslucent = false
+        
         window?.rootViewController = tabbarController
         window?.makeKeyAndVisible()
     }

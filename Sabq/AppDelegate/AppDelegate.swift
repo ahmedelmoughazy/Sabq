@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setupNetworking()
         window = UIWindow(frame: UIScreen.main.bounds)
-   //     UIView.appearance().semanticContentAttribute = .forceRightToLeft
         
         NewsRouter.startRouting(at: window)
         return true

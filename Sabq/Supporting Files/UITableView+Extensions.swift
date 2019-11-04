@@ -58,10 +58,10 @@ extension UITableView {
         UIView.animate(withDuration: 1, animations: {
             
             messageImageView.transform = CGAffineTransform(rotationAngle: .pi / 10)
-        }, completion: { (finish) in
+        }, completion: { (_) in
             UIView.animate(withDuration: 1, animations: {
                 messageImageView.transform = CGAffineTransform(rotationAngle: -1 * (.pi / 10))
-            }, completion: { (finishh) in
+            }, completion: { (_) in
                 UIView.animate(withDuration: 1, animations: {
                     messageImageView.transform = CGAffineTransform.identity
                 })

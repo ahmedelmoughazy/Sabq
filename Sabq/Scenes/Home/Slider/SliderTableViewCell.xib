@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mOn-WD-m5S">
                         <rect key="frame" x="0.0" y="0.0" width="313" height="481"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="color-background"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="QcK-cF-CSM">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -65,46 +66,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCK-Ke-uUw">
-                                <rect key="frame" x="20" y="446" width="273" height="35"/>
+                                <rect key="frame" x="20" y="448" width="273" height="18"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_time" translatesAutoresizingMaskIntoConstraints="NO" id="kr2-HW-Y3S">
-                                        <rect key="frame" x="0.0" y="10" width="15" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="15" id="QLY-3c-cqY"/>
-                                            <constraint firstAttribute="height" constant="15" id="khr-Bs-SJb"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coa-rY-gs6">
-                                        <rect key="frame" x="25" y="7" width="38" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_views_icon_hot" translatesAutoresizingMaskIntoConstraints="NO" id="ouy-76-BXl">
-                                        <rect key="frame" x="111" y="10" width="11" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="0wB-Ah-c9G"/>
-                                            <constraint firstAttribute="width" constant="11" id="6Zh-Wi-3hA"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHu-AA-BcH">
-                                        <rect key="frame" x="254" y="6" width="19" height="24"/>
-                                        <state key="normal" image="ic_bookmark"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="By0-SA-gQB">
-                                        <rect key="frame" x="132" y="7" width="38" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coa-rY-gs6">
+                                        <rect key="frame" x="0.0" y="0.0" width="273" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -115,17 +80,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="By0-SA-gQB" firstAttribute="leading" secondItem="ouy-76-BXl" secondAttribute="trailing" constant="10" id="1DT-NL-9fK"/>
-                                    <constraint firstItem="kr2-HW-Y3S" firstAttribute="top" secondItem="VCK-Ke-uUw" secondAttribute="top" constant="10" id="2cL-MU-KQe"/>
-                                    <constraint firstAttribute="trailing" secondItem="GHu-AA-BcH" secondAttribute="trailing" id="6MR-hQ-9aK"/>
-                                    <constraint firstItem="Coa-rY-gs6" firstAttribute="leading" secondItem="kr2-HW-Y3S" secondAttribute="trailing" constant="10" id="73C-UC-Ra3"/>
-                                    <constraint firstItem="ouy-76-BXl" firstAttribute="leading" secondItem="kr2-HW-Y3S" secondAttribute="trailing" constant="96" id="Fue-4X-aqC"/>
-                                    <constraint firstAttribute="bottom" secondItem="By0-SA-gQB" secondAttribute="bottom" constant="10" id="LSg-yu-C8v"/>
-                                    <constraint firstAttribute="bottom" secondItem="ouy-76-BXl" secondAttribute="bottom" constant="10" id="aU9-SP-XTg"/>
-                                    <constraint firstAttribute="bottom" secondItem="kr2-HW-Y3S" secondAttribute="bottom" constant="10" id="f9Z-1a-abN"/>
-                                    <constraint firstAttribute="bottom" secondItem="GHu-AA-BcH" secondAttribute="bottom" constant="5" id="hEB-fs-54w"/>
-                                    <constraint firstItem="kr2-HW-Y3S" firstAttribute="leading" secondItem="VCK-Ke-uUw" secondAttribute="leading" id="n6u-zR-jhX"/>
-                                    <constraint firstAttribute="bottom" secondItem="Coa-rY-gs6" secondAttribute="bottom" constant="10" id="zPB-gr-Cjx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Coa-rY-gs6" secondAttribute="trailing" id="62P-Pn-c3O"/>
+                                    <constraint firstItem="Coa-rY-gs6" firstAttribute="top" secondItem="VCK-Ke-uUw" secondAttribute="top" id="CgH-PN-bdc"/>
+                                    <constraint firstAttribute="bottom" secondItem="Coa-rY-gs6" secondAttribute="bottom" id="G5R-xs-uBj"/>
+                                    <constraint firstItem="Coa-rY-gs6" firstAttribute="leading" secondItem="VCK-Ke-uUw" secondAttribute="leading" id="SdR-XH-Do2"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -136,14 +94,17 @@
                             <constraint firstItem="0U0-au-a4M" firstAttribute="top" secondItem="rLV-ei-wka" secondAttribute="bottom" constant="15" id="FJS-B2-ZEM"/>
                             <constraint firstItem="VCK-Ke-uUw" firstAttribute="leading" secondItem="iyq-JZ-ZsD" secondAttribute="leading" constant="20" id="I7w-gp-43q"/>
                             <constraint firstItem="rLV-ei-wka" firstAttribute="leading" secondItem="iyq-JZ-ZsD" secondAttribute="leading" id="Pi8-Sl-4OD"/>
+                            <constraint firstAttribute="bottom" secondItem="VCK-Ke-uUw" secondAttribute="bottom" constant="15" id="Ucn-9S-iZk"/>
                             <constraint firstAttribute="trailing" secondItem="rLV-ei-wka" secondAttribute="trailing" id="WSA-S8-mDA"/>
                             <constraint firstItem="MNV-cn-5FV" firstAttribute="leading" secondItem="iyq-JZ-ZsD" secondAttribute="leading" constant="20" id="ccI-tl-onO"/>
                             <constraint firstItem="rLV-ei-wka" firstAttribute="top" secondItem="iyq-JZ-ZsD" secondAttribute="top" id="euh-6d-pd7"/>
                             <constraint firstItem="MNV-cn-5FV" firstAttribute="top" secondItem="0U0-au-a4M" secondAttribute="bottom" constant="15" id="kgU-2D-Zej"/>
                             <constraint firstAttribute="trailing" secondItem="0U0-au-a4M" secondAttribute="trailing" constant="20" id="lvO-Mg-huh"/>
-                            <constraint firstAttribute="bottom" secondItem="VCK-Ke-uUw" secondAttribute="bottom" id="r2v-ep-KcI"/>
                             <constraint firstAttribute="trailing" secondItem="MNV-cn-5FV" secondAttribute="trailing" constant="20" id="vwW-oJ-Xto"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCoverable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
@@ -166,8 +127,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_bookmark" width="19" height="24"/>
-        <image name="ic_time" width="15" height="15"/>
-        <image name="ic_views_icon_hot" width="11" height="15"/>
+        <namedColor name="color-background">
+            <color red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -26,8 +26,11 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
     ]
     
     private func setupLoadingPlaceholderView() {
-        loadingPlaceholderView.gradientColor = .white
-        loadingPlaceholderView.backgroundColor = .white
+        guard let backgroundColor = UIColor(named: "shimmer-color"),
+            let colorAccent = UIColor(named: "shimmer-gredient") else { return }
+        
+        loadingPlaceholderView.gradientColor = colorAccent
+        loadingPlaceholderView.backgroundColor = backgroundColor
         loadingPlaceholderView.cover(view)
     }
     
@@ -62,11 +65,12 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         presenter.loadHome()
     }
 
-    @objc func refresh() {
-        adapter.clear(reload: true)
-        homeTableView.separatorStyle = .none
-        setupLoadingPlaceholderView()
-        presenter.loadHome()
+    @objc
+    func refresh() {
+//        adapter.clear(reload: true)
+//        homeTableView.separatorStyle = .none
+//        setupLoadingPlaceholderView()
+//        presenter.loadHome()
     }
     
     func reloadActorsData() {

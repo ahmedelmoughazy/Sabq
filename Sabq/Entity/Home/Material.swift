@@ -30,13 +30,13 @@ struct Material: Codable {
 	let materialUpdated: Bool?
 	let isEdit: Bool?
 	let hasRelatedMaterials: Bool?
-	let authors: [String]?
+//	let authors: [String]?
 	let images: [Images]?
 	let videos: [Videos]?
 	let attachements: [String]?
 	let tags: [Tag]?
 	let updates: [String]?
-	let relatedMaterials: [String]?
+//	let relatedMaterials: [String]?
 	let matarialDisplayed: String?
 	let comments: [String]?
 	let descriptionString: String?
