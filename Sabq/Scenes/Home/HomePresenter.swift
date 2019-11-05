@@ -14,10 +14,10 @@ class HomePresenter: HomePresenterProtocol {
     private var homeModel: HomeModelProtocol
     
     func loadHome() {
-        homeModel.getSliders {(result) in
+        homeModel.getResponse(service: NewsService.slider) {(result) in
             do {
-                let sliders = try (result.get() as? SliderResponse)?.slider
-                let materials = try (result.get() as? SliderResponse)?.materials
+                let sliders = try (result.get() as? APIResponse)?.slider
+                let materials = try (result.get() as? APIResponse)?.materials
                 guard let slidersList = sliders, let materialsList = materials else { return }
                 self.homeView.renderViewWithObjects(sliders: slidersList, materials: materialsList)
             } catch {
@@ -28,9 +28,9 @@ class HomePresenter: HomePresenterProtocol {
     }
 
     func loadImages() {
-        homeModel.getImages {(result) in
+        homeModel.getResponse(service: NewsService.images) {(result) in
             do {
-                let comics = try (result.get() as? ImageResponse)?.comics
+                let comics = try (result.get() as? APIResponse)?.comics
                 guard let results = comics else { return }
                 self.homeView.renderViewWithObjects(images: results)
             } catch {
@@ -40,9 +40,9 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func loadVideos() {
-        homeModel.getVideos {(result) in
+        homeModel.getResponse(service: NewsService.videos) {(result) in
             do {
-                let comics = try (result.get() as? VideoResponse)?.comics
+                let comics = try (result.get() as? APIResponse)?.comics
                 guard let results = comics else { return }
                 self.homeView.renderViewWithObjects(videos: results)
             } catch {
@@ -51,9 +51,9 @@ class HomePresenter: HomePresenterProtocol {
         }
     }
     func loadArticles() {
-        homeModel.getArticles {(result) in
+        homeModel.getResponse(service: NewsService.articles) {(result) in
             do {
-                let materials = try (result.get() as? ArticleResponse)?.materials
+                let materials = try (result.get() as? APIResponse)?.materials
                 guard let results = materials else { return }
                 self.homeView.renderViewWithObjects(articles: results)
             } catch {

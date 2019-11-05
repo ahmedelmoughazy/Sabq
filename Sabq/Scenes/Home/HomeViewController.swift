@@ -10,7 +10,16 @@ import UIKit
 import LoadingPlaceholderView
 
 class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
-
+    
+    private let VIDEOSROW = 5
+    private let IMAGESROW = 11
+    private let ARTICLESROW = 17
+    private let MATERIALROWHEIGHT: CGFloat = 130
+    private let SLIDERROWHEIGHT: CGFloat = UIScreen.main.bounds.height / 2
+    private let VIDEOSROWHEIGHT: CGFloat = UIScreen.main.bounds.height / 2.9
+    private let IMAGESROWHEIGHT: CGFloat = UIScreen.main.bounds.height / 2.9
+    private let ARTICLESROWHEIGHT: CGFloat = UIScreen.main.bounds.height / 2.9
+    
     @IBOutlet private weak var homeTableView: UITableView! {
         didSet {
             homeTableView.coverableCellsIdentifiers = cellsIdentifiers
@@ -19,10 +28,10 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
     private var adapter = HomeAdapter()
     private var loadingPlaceholderView = LoadingPlaceholderView()
     private var cellsIdentifiers = [
-        "SliderTableViewCell",
-        "MaterialTableViewCell",
-        "MaterialTableViewCell",
-        "MaterialTableViewCell"
+        SliderTableViewCell.identifier,
+        MaterialTableViewCell.identifier,
+        MaterialTableViewCell.identifier,
+        MaterialTableViewCell.identifier
     ]
     
     private func setupLoadingPlaceholderView() {
@@ -36,7 +45,7 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         homeTableView.dataSource = adapter
         homeTableView.delegate = self
         homeTableView.separatorStyle = .none
@@ -64,13 +73,14 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         setupLoadingPlaceholderView()
         presenter.loadHome()
     }
-
+    
     @objc
     func refresh() {
-//        adapter.clear(reload: true)
-//        homeTableView.separatorStyle = .none
-//        setupLoadingPlaceholderView()
-//        presenter.loadHome()
+        loadingPlaceholderView.uncover()
+        adapter.clear(reload: true)
+        homeTableView.separatorStyle = .none
+        setupLoadingPlaceholderView()
+        presenter.loadHome()
     }
     
     func reloadActorsData() {
@@ -98,7 +108,7 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
     func renderViewWithObjects(articles: [Material]) {
         adapter.addArticles(items: articles)
     }
-
+    
     func renderEmptyView() {
         loadingPlaceholderView.uncover()
         homeTableView.setEmptyView(title: NSLocalizedString("No Internet Title", comment: "No Internet Title"),
@@ -108,16 +118,21 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
 }
 
 extension HomeViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return UIScreen.main.bounds.height / 2
+            return SLIDERROWHEIGHT
         default:
             switch indexPath.row {
-            case 5, 11, 17:
-                return UIScreen.main.bounds.height / 2.9
+            case VIDEOSROW:
+                return VIDEOSROWHEIGHT
+            case IMAGESROW:
+                return IMAGESROWHEIGHT
+            case ARTICLESROW:
+                return ARTICLESROWHEIGHT
             default:
-                return 130
+                return MATERIALROWHEIGHT
             }
         }
     }

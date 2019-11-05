@@ -10,47 +10,14 @@ import Foundation
 
 class HomeModel: HomeModelProtocol {
     
-    func getSliders(compelation: @escaping (Result<Any, Error>) -> Void) {
-        NetworkManager.shared.getSliders { (result, _) in
+    func getResponse(service: NewsService, compelation: @escaping (Result<Any, Error>) -> Void) {
+        NetworkManager.shared.getResponse(service: service) { (result, _) in
             do {
                 let results = try result.get()
                 compelation(.success(results))
             } catch {
                 print(error)
                 compelation(.failure(error))
-            }
-        }
-    }
-    
-    func getImages(compelation: @escaping (Result<Any, Error>) -> Void) {
-        NetworkManager.shared.getImages { (result, _) in
-            do {
-                let results = try result.get()
-                compelation(.success(results))
-            } catch {
-                print(error)
-            }
-        }
-    }
-    
-    func getVideos(compelation: @escaping (Result<Any, Error>) -> Void) {
-        NetworkManager.shared.getVideos { (result, _) in
-            do {
-                let results = try result.get()
-                compelation(.success(results))
-            } catch {
-                print(error)
-            }
-        }
-    }
-    
-    func getArticles(compelation: @escaping (Result<Any, Error>) -> Void) {
-        NetworkManager.shared.getArticles { (result, _) in
-            do {
-                let results = try result.get()
-                compelation(.success(results))
-            } catch {
-                print(error)
             }
         }
     }
