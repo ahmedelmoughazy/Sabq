@@ -79,7 +79,6 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
         loadingPlaceholderView.uncover()
         adapter.clear(reload: true)
         homeTableView.separatorStyle = .none
-        setupLoadingPlaceholderView()
         presenter.loadHome()
     }
     

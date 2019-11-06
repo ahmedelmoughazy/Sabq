@@ -136,46 +136,44 @@ extension HomeAdapter: UITableViewDataSource {
         guard let item = list?[indexPath.row] else { return UITableViewCell() }
         switch section {
         case 0:
-            if let cell = tableView.dequeueReusableCell(
+            guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: SliderTableViewCell.identifier,
-                for: indexPath) as? SliderTableViewCell {
+                for: indexPath) as? SliderTableViewCell else { return UITableViewCell() }
                 //configure the cell
                 cell.configureCell(sliders: slider[indexPath.row].sliders) 
                 return cell
-            }
         default:
             switch item.type {
             case .material:
-                if let item = item as? MaterialItem, let cell = tableView.dequeueReusableCell(
-                    withIdentifier: MaterialTableViewCell.identifier, for: indexPath) as? MaterialTableViewCell {
-                    //configure the cell
-                    cell.configureCell(material: item.material)
-                    return cell
-                }
+                guard let item = item as? MaterialItem, let cell = tableView.dequeueReusableCell(
+                    withIdentifier: MaterialTableViewCell.identifier, for: indexPath) as? MaterialTableViewCell
+                    else { return UITableViewCell() }
+                //configure the cell
+                cell.configureCell(material: item.material)
+                return cell
             case .images:
-                if let item = item as? ImagesListItem, let cell = tableView.dequeueReusableCell(
-                    withIdentifier: ImageTableViewCell.identifier, for: indexPath) as? ImageTableViewCell {
-                    //configure the cell
-                    cell.configureCell(images: item.images)
-                    return cell
-                }
+                guard let item = item as? ImagesListItem, let cell = tableView.dequeueReusableCell(
+                    withIdentifier: ImageTableViewCell.identifier, for: indexPath) as? ImageTableViewCell
+                    else { return UITableViewCell() }
+                //configure the cell
+                cell.configureCell(images: item.images)
+                return cell
             case .videos:
-                if let item = item as? VideosListItem, let cell = tableView.dequeueReusableCell(
-                    withIdentifier: VideoTableViewCell.identifier, for: indexPath) as? VideoTableViewCell {
-                    //configure the cell
-                    cell.configureCell(videos: item.videos)
-                    return cell
-                }
+                guard let item = item as? VideosListItem, let cell = tableView.dequeueReusableCell(
+                    withIdentifier: VideoTableViewCell.identifier, for: indexPath) as? VideoTableViewCell
+                    else { return UITableViewCell() }
+                //configure the cell
+                cell.configureCell(videos: item.videos)
+                return cell
             case .articles:
-                if let item = item as? ArticlesListItem, let cell = tableView.dequeueReusableCell(
-                    withIdentifier: ArticleTableViewCell.identifier, for: indexPath) as? ArticleTableViewCell {
-                    //configure the cell
-                    cell.configureCell(articles: item.articles)
-                    return cell
-                }
+                guard let item = item as? ArticlesListItem, let cell = tableView.dequeueReusableCell(
+                    withIdentifier: ArticleTableViewCell.identifier, for: indexPath) as? ArticleTableViewCell
+                    else { return UITableViewCell() }
+                //configure the cell
+                cell.configureCell(articles: item.articles)
+                return cell
             }
         }
-        return UITableViewCell()
     }
 }
 
