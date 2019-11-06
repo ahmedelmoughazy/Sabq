@@ -5,9 +5,10 @@ target 'Sabq' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-	pod 'Moya'
-  	pod 'SDWebImage'
-	pod 'LocalizedTimeAgo'
-	pod 'SwiftyImage'
-  # Pods for Sabq
+  pod 'Moya', :inhibit_warnings => true
+  pod 'SDWebImage'
+  pod 'LocalizedTimeAgo'
+  pod 'LoadingPlaceholderView', :inhibit_warnings => true
+  pod 'MaterialComponents/PageControl'
+  pod "YoutubePlayer-in-WKWebView"
 end

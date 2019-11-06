@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Sabq
+
+  Created by AhmedElmoughazy on 10/25/19.
+  Copyright © 2019 Ahmed Refaat. All rights reserved.
+*/
+
+"Bookmarks" = "Bookmarks";
+"Common" = "Common";
+"Sections" = "Sections";
+"Home" = "Home";
+"Search" = "Search";
+"Videos" = "Videos";
+"Articles" = "Articles";
+"More" = "More";
+"No Internet Title" = "No Or Slow Internet Connection";
+"No Internet Message" = "please check your internet connection and try again";
+"Pull to refresh" = "Pull to refresh";
+//"" = "";
