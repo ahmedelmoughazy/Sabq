@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Sabq
+
+  Created by AhmedElmoughazy on 10/25/19.
+  Copyright © 2019 Ahmed Refaat. All rights reserved.
+*/
+
+"Bookmarks" = "اختياراتى";
+"Common" = "الشائع";
+"Sections" = "الاقسام";
+"Home" = "الاخبار";
+"Search" = "البحث";
+"Articles" = "المقالات";
+"Videos" = "فيديوهات";
+"More" = "المزيد";
+"No Internet Title" = "عفوا الاتصال بطئ او لا يوجد اتصال";
+"No Internet Message" = "افحص الاتصال وحاول مره اخرى";
+"Pull to refresh" = "اسحب للتحديث";
