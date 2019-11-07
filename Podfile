@@ -11,4 +11,5 @@ target 'Sabq' do
   pod 'LoadingPlaceholderView', :inhibit_warnings => true
   pod 'MaterialComponents/PageControl'
   pod "YoutubePlayer-in-WKWebView"
+  pod 'GoogleSignIn'
 end

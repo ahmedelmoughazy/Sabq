@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class CommonViewController: BaseViewController<CommonPresenter>, CommonViewProtocol {
 

@@ -15,6 +15,8 @@
 		341E23C323684A38000DF1CD /* VideoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341E23BF23684A38000DF1CD /* VideoProtocols.swift */; };
 		341E23C423684A38000DF1CD /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341E23C023684A38000DF1CD /* VideoModel.swift */; };
 		341E23C523684A38000DF1CD /* VideoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341E23C123684A38000DF1CD /* VideoPresenter.swift */; };
+		3445ED1223743A9500BB6F56 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445ED1023743A9500BB6F56 /* LoginViewController.swift */; };
+		3445ED1323743A9500BB6F56 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3445ED1123743A9500BB6F56 /* LoginViewController.xib */; };
 		3446928123605E7A0095CAC9 /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3446927F23605E7A0095CAC9 /* ArticleCollectionViewCell.swift */; };
 		3446928223605E7A0095CAC9 /* ArticleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3446928023605E7A0095CAC9 /* ArticleCollectionViewCell.xib */; };
 		344F582C235DA19A00206AC1 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344F5826235DA19A00206AC1 /* Material.swift */; };
@@ -125,6 +127,8 @@
 		341E23BF23684A38000DF1CD /* VideoProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoProtocols.swift; sourceTree = "<group>"; };
 		341E23C023684A38000DF1CD /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		341E23C123684A38000DF1CD /* VideoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPresenter.swift; sourceTree = "<group>"; };
+		3445ED1023743A9500BB6F56 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3445ED1123743A9500BB6F56 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		3446927F23605E7A0095CAC9 /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
 		3446928023605E7A0095CAC9 /* ArticleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCollectionViewCell.xib; sourceTree = "<group>"; };
 		344F5826235DA19A00206AC1 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
@@ -248,6 +252,15 @@
 				341E23B4236848EA000DF1CD /* VideoViewController.xib */,
 			);
 			path = VideoView;
+			sourceTree = "<group>";
+		};
+		3445ED0D23743A0E00BB6F56 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3445ED1023743A9500BB6F56 /* LoginViewController.swift */,
+				3445ED1123743A9500BB6F56 /* LoginViewController.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		344F5832235DDAEE00206AC1 /* Article */ = {
@@ -533,6 +546,7 @@
 		6BCBD98F235A016700296E9D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3445ED0D23743A0E00BB6F56 /* Login */,
 				3461F581236226C6006072F6 /* Details */,
 				6B1D96C32360DBFF00614704 /* Bookmarks */,
 				6B1D96C22360DBF800614704 /* Search */,
@@ -577,6 +591,7 @@
 				347AA4F1235853B10008AA2D /* Resources */,
 				AB2D03E400F53B88817BE191 /* [CP] Embed Pods Frameworks */,
 				340F0635236604D5009347DA /* ShellScript */,
+				C7559347B09E28B633F0A18E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 				340F0634236604B4009347DA /* PBXBuildRule */,
@@ -629,6 +644,7 @@
 			files = (
 				344F5836235DDB0700206AC1 /* ArticleTableViewCell.xib in Resources */,
 				6B1D96C72360DC3900614704 /* CommonViewController.xib in Resources */,
+				3445ED1323743A9500BB6F56 /* LoginViewController.xib in Resources */,
 				3407F0C823703C4D004F7581 /* 4_28.otf in Resources */,
 				6B1D96CB2360DC4C00614704 /* SectionsViewController.xib in Resources */,
 				3446928223605E7A0095CAC9 /* ArticleCollectionViewCell.xib in Resources */,
@@ -686,6 +702,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sabq/Pods-Sabq-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7559347B09E28B633F0A18E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sabq/Pods-Sabq-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sabq/Pods-Sabq-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sabq/Pods-Sabq-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D8C78C60F63E3FE7643C37F0 /* [CP] Check Pods Manifest.lock */ = {
@@ -753,6 +786,7 @@
 				346AE59123717B1F00FB794B /* APIResponse.swift in Sources */,
 				6B1D96DE2360DD9500614704 /* BookmarksPresenter.swift in Sources */,
 				34F0847F235C66CA00224187 /* HomeViewController.swift in Sources */,
+				3445ED1223743A9500BB6F56 /* LoginViewController.swift in Sources */,
 				6B1D96E02360DD9500614704 /* BookmarksProtocols.swift in Sources */,
 				6B1D96F62360DDBC00614704 /* CommonPresenter.swift in Sources */,
 				6B1D96E72360DDA200614704 /* SearchModule.swift in Sources */,

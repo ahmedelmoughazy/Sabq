@@ -12,6 +12,7 @@ class NewsRouter {
     
     private static var window: UIWindow?
     private static var homeNavigationController: UINavigationController?
+    private static var loginNavigationController: UINavigationController?
     private static var tabbarController: UITabBarController?
     
     class func startRouting(at window: UIWindow?) {
@@ -34,6 +35,7 @@ class NewsRouter {
                                     selectedImage: #imageLiteral(resourceName: "ic_newspaper_active") )
         
         //setup viewcontrollers
+        let loginViewController = LoginViewController()
         let bookmarksViewController = BookmarksModule.getBookmarksView()
         let sectionsViewController = SectionsModule.getSectionsView()
         let commonViewController = CommonModule.getCommonView()
@@ -48,6 +50,7 @@ class NewsRouter {
         
         self.homeNavigationController = UINavigationController(rootViewController: homeViewController)
         guard let homeNavigationController = self.homeNavigationController else { return }
+
         //setup tabbar
         self.tabbarController = UITabBarController()
         self.tabbarController?.viewControllers = [ homeNavigationController,
@@ -58,7 +61,11 @@ class NewsRouter {
         self.tabbarController?.tabBar.barTintColor = UIColor(named: "color-background")
         self.tabbarController?.tabBar.isTranslucent = false
         
-        window?.rootViewController = tabbarController
+        self.loginNavigationController = UINavigationController(rootViewController: loginViewController)
+        
+        guard let loginNavigationController = self.loginNavigationController else { return }
+        
+        window?.rootViewController = loginNavigationController
         window?.makeKeyAndVisible()
     }
 
@@ -72,6 +79,12 @@ class NewsRouter {
         tabbarController?.tabBar.isHidden = true
         homeNavigationController?.pushViewController(videoViewController, animated: true)
     }
+    
+    class func moveToApplication() {
+        guard let tabbarController = self.tabbarController else { return }
+        loginNavigationController?.setViewControllers([tabbarController], animated: true)
+    }
+    
 //    class func setRTL() {
 //        UIView.appearance().semanticContentAttribute = .forceRightToLeft
 //        UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft

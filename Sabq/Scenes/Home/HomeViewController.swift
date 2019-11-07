@@ -46,6 +46,8 @@ class HomeViewController: BaseViewController<HomePresenter>, HomeViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBarController?.navigationController?.setNavigationBarHidden(true, animated: false)
+        
         homeTableView.dataSource = adapter
         homeTableView.delegate = self
         homeTableView.separatorStyle = .none
